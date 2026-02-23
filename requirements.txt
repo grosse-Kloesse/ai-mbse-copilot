@@ -18,3 +18,6 @@ qdrant-client==1.16.2
 typing-inspection==0.4.2
 typing_extensions==4.15.0
 urllib3==2.6.3
+fastapi
+uvicorn[standard]
+sentence-transformers==2.7.0

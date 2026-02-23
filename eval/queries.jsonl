@@ -1,0 +1,3 @@
+{"query":"detect over-voltage","expected_source_id":"FUNC-010"}
+{"query":"over-voltage protection requirement","expected_source_id":"REQ-001"}
+{"query":"power module protection logic","expected_source_id":"BLK-100"}

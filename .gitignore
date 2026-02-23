@@ -4,3 +4,4 @@ __pycache__/
 .DS_Store
 qdrant_storage/
 data/processed/
+docs/handoff_private.md
