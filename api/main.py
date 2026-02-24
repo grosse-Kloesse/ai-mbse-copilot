@@ -113,3 +113,51 @@ class TraceResponse(BaseModel):
 def trace(req: TraceRequest):
     paths = trace_k(req.start_id, req.k)
     return TraceResponse(start_id=req.start_id, k=req.k, paths=paths)
+
+class SearchTraceRequest(BaseModel):
+    query: str
+    top_k: int = Field(3, ge=1, le=20)
+    k: int = Field(2, ge=1, le=10)
+
+
+class SearchTraceResponse(BaseModel):
+    query: str
+    top_hit_source_id: str | None
+    hits: list[SearchHit]
+    trace_paths: list[list[str]]
+
+
+@app.post("/search_trace", response_model=SearchTraceResponse)
+def search_trace(req: SearchTraceRequest):
+    # 1) vector search (reuse the same logic as /search)
+    qvec = model.encode(req.query, normalize_embeddings=True).tolist()
+
+    res = client.query_points(
+        collection_name=COLLECTION_NAME,
+        query=qvec,
+        limit=req.top_k,
+        with_payload=True,
+    )
+
+    hits: list[SearchHit] = []
+    for p in res.points:
+        payload = p.payload or {}
+        hits.append(
+            SearchHit(
+                score=float(p.score),
+                source_id=payload.get("source_id"),
+                chunk_id=payload.get("chunk_id"),
+                text=payload.get("text"),
+            )
+        )
+
+    # 2) trace from the top hit's source_id
+    top_source_id = hits[0].source_id if hits and hits[0].source_id else None
+    trace_paths = trace_k(top_source_id, req.k) if top_source_id else []
+
+    return SearchTraceResponse(
+        query=req.query,
+        top_hit_source_id=top_source_id,
+        hits=hits,
+        trace_paths=trace_paths,
+    )

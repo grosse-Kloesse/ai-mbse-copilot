@@ -1,0 +1,24 @@
+{"query":"requirement 1 safe operation","expected_source_id":"REQ-001"}
+{"query":"system shall satisfy requirement 1","expected_source_id":"REQ-001"}
+{"query":"function 1 detects condition 1","expected_source_id":"FUNC-001"}
+{"query":"block 1 implements protection and control","expected_source_id":"BLK-001"}
+
+{"query":"requirement 5 safe operation","expected_source_id":"REQ-005"}
+{"query":"system shall satisfy requirement 5","expected_source_id":"REQ-005"}
+{"query":"function 5 detects condition 5","expected_source_id":"FUNC-005"}
+{"query":"block 5 implements protection and control","expected_source_id":"BLK-005"}
+
+{"query":"requirement 10 safe operation","expected_source_id":"REQ-010"}
+{"query":"system shall satisfy requirement 10","expected_source_id":"REQ-010"}
+{"query":"function 10 detects condition 10","expected_source_id":"FUNC-010"}
+{"query":"block 10 implements protection and control","expected_source_id":"BLK-010"}
+
+{"query":"requirement 17 safe operation","expected_source_id":"REQ-017"}
+{"query":"system shall satisfy requirement 17","expected_source_id":"REQ-017"}
+{"query":"function 17 detects condition 17","expected_source_id":"FUNC-017"}
+{"query":"block 17 implements protection and control","expected_source_id":"BLK-017"}
+
+{"query":"requirement 20 safe operation","expected_source_id":"REQ-020"}
+{"query":"system shall satisfy requirement 20","expected_source_id":"REQ-020"}
+{"query":"function 20 detects condition 20","expected_source_id":"FUNC-020"}
+{"query":"block 20 implements protection and control","expected_source_id":"BLK-020"}

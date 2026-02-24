@@ -1,0 +1,29 @@
+{"query":"prevent over-voltage conditions requirement","expected_source_id":"REQ-001"}
+{"query":"activate clamp when dc-link voltage is too high","expected_source_id":"FUNC-001"}
+{"query":"module that implements over-voltage protection control logic","expected_source_id":"BLK-001"}
+{"query":"limit output when bus voltage is above threshold","expected_source_id":"FUNC-001"}
+
+{"query":"detect under-voltage and enter safe mode","expected_source_id":"FUNC-002"}
+{"query":"under-voltage monitoring requirement","expected_source_id":"REQ-002"}
+{"query":"reduce load when battery voltage drops","expected_source_id":"FUNC-002"}
+{"query":"under-voltage protection module","expected_source_id":"BLK-002"}
+
+{"query":"thermal runaway prevention requirement","expected_source_id":"REQ-003"}
+{"query":"enable cooling when module temperature is high","expected_source_id":"FUNC-003"}
+{"query":"module for thermal protection and safety control","expected_source_id":"BLK-003"}
+{"query":"reduce power to avoid overheating","expected_source_id":"FUNC-003"}
+
+{"query":"detect abnormal vibration patterns","expected_source_id":"FUNC-004"}
+{"query":"vibration anomaly detection requirement","expected_source_id":"REQ-004"}
+{"query":"schedule maintenance when vibration rms increases","expected_source_id":"FUNC-004"}
+{"query":"module handling vibration diagnostics and alarms","expected_source_id":"BLK-004"}
+
+{"query":"control coolant flow and fan speed","expected_source_id":"FUNC-005"}
+{"query":"cooling control requirement","expected_source_id":"REQ-005"}
+{"query":"optimize cooling by adjusting fan speed","expected_source_id":"FUNC-005"}
+{"query":"cooling control module","expected_source_id":"BLK-005"}
+
+{"query":"detect insulation degradation and leakage current","expected_source_id":"FUNC-006"}
+{"query":"insulation monitoring requirement","expected_source_id":"REQ-006"}
+{"query":"raise warning on ground fault signal","expected_source_id":"FUNC-006"}
+{"query":"module for insulation monitoring and diagnostics","expected_source_id":"BLK-006"}

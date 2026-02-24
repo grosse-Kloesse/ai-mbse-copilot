@@ -1,3 +1,17 @@
 {"query":"detect over-voltage","expected_source_id":"FUNC-010"}
+{"query":"detecting over voltage threshold","expected_source_id":"FUNC-010"}
+{"query":"voltage above threshold detection function","expected_source_id":"FUNC-010"}
+{"query":"trigger protection when voltage too high","expected_source_id":"FUNC-010"}
+{"query":"over-voltage detection logic","expected_source_id":"FUNC-010"}
+
 {"query":"over-voltage protection requirement","expected_source_id":"REQ-001"}
+{"query":"system shall prevent over-voltage conditions","expected_source_id":"REQ-001"}
+{"query":"requirement about over voltage prevention","expected_source_id":"REQ-001"}
+{"query":"safety requirement: prevent overvoltage","expected_source_id":"REQ-001"}
+{"query":"over voltage protection requirement statement","expected_source_id":"REQ-001"}
+
 {"query":"power module protection logic","expected_source_id":"BLK-100"}
+{"query":"power_module implements protection logic","expected_source_id":"BLK-100"}
+{"query":"block implementing protection and control","expected_source_id":"BLK-100"}
+{"query":"which module implements protection logic","expected_source_id":"BLK-100"}
+{"query":"architecture block for protection control","expected_source_id":"BLK-100"}

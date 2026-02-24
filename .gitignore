@@ -5,3 +5,6 @@ __pycache__/
 qdrant_storage/
 data/processed/
 docs/handoff_private.md
+# generated toy XML (do not commit)
+data/raw/sample_mbse_many.xml
+data/raw/sample_mbse_v2.xml

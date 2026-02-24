@@ -1,8 +1,9 @@
 import json
 from pathlib import Path
 from xml.etree import ElementTree as ET
+import sys
 
-RAW = Path("data/raw/sample_mbse.xml")
+RAW = Path(sys.argv[1]) if len(sys.argv) > 1 else Path("data/raw/sample_mbse.xml")
 OUT_DIR = Path("data/processed")
 
 def write_jsonl(path: Path, rows):
