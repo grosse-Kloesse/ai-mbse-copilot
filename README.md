@@ -115,6 +115,15 @@ curl -s -X POST "http://127.0.0.1:8000/search" \
 
 Expected: top hit should be `BLK-100 (Power_Module)` for this query.
 
+### 4) Traceability via API (graph k-hop)
+
+```bash
+curl -s -X POST "http://127.0.0.1:8000/trace" \
+  -H "Content-Type: application/json" \
+  -d '{"start_id":"REQ-001","k":2}' && echo
+```
+Expected:	paths contains ["REQ-001","FUNC-010","BLK-100"] for the toy dataset.
+
 ---
 
 ## Qdrant persistence (volume)

@@ -1,7 +1,7 @@
 import os
 from fastapi import FastAPI,HTTPException
 from pydantic import BaseModel, Field
-
+from api.trace import trace_k 
 from sentence_transformers import SentenceTransformer
 from qdrant_client import QdrantClient
 
@@ -97,3 +97,19 @@ def search(req: SearchRequest):
         )
 
     return SearchResponse(query=req.query, hits=hits)
+
+class TraceRequest(BaseModel):
+    start_id: str
+    k: int = Field(2, ge=1, le=10)  # 默认2跳，限制 1~10
+
+
+class TraceResponse(BaseModel):
+    start_id: str
+    k: int
+    paths: list[list[str]]
+
+
+@app.post("/trace", response_model=TraceResponse)
+def trace(req: TraceRequest):
+    paths = trace_k(req.start_id, req.k)
+    return TraceResponse(start_id=req.start_id, k=req.k, paths=paths)
