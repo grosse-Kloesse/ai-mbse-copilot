@@ -10,6 +10,8 @@ services:
       - ./data:/app/data
     environment:
       - QDRANT_URL=http://qdrant:6333
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - OPENAI_MODEL=gpt-4.1-mini
     command: uvicorn api.main:app --host 0.0.0.0 --port 8000 --reload
 
   qdrant:

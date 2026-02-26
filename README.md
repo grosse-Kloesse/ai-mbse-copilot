@@ -5,7 +5,7 @@ A small, runnable **MBSE Copilot** demo that turns an EA/XMI-like XML export int
 - **graph data** (nodes/edges) for traceability, and
 - **text chunks** indexed into a **vector database (Qdrant)** for semantic search.
 
-It exposes a minimal **FastAPI** service (`/search`, `/trace`, `/search_trace`, `/status`) so you can demo the full end-to-end pipeline.
+It exposes a minimal **FastAPI** service (`/search`, `/trace`, `/search_trace`, `/ask`, `/status`) so you can demo the full end-to-end pipeline.
 
 ---
 
@@ -14,7 +14,7 @@ It exposes a minimal **FastAPI** service (`/search`, `/trace`, `/search_trace`, 
 1. Generate a toy MBSE XML (EA/XMI-like)
 2. Parse XML → JSONL (`nodes/edges/chunks`)
 3. (Optional) Graph traversal demo (k-hop trace over edges)
-4. Embed chunks with **SentenceTransformer** (sentence-transformers/all-MiniLM-L6-v2, 384-dim) and **upsert** into **Qdrant**
+4. Embed chunks with **SentenceTransformer** (`sentence-transformers/all-MiniLM-L6-v2`, 384-dim) and **upsert** into **Qdrant**
 5. Query top-k chunks back from Qdrant (semantic retrieval)
 6. Call the API:
    - `GET /health`
@@ -22,6 +22,7 @@ It exposes a minimal **FastAPI** service (`/search`, `/trace`, `/search_trace`, 
    - `POST /search` (semantic search)
    - `POST /trace` (graph k-hop traceability)
    - `POST /search_trace` (semantic retrieval + graph traversal combined)
+   - `POST /ask` (RAG generation with citations)
 
 ---
 
@@ -29,7 +30,7 @@ It exposes a minimal **FastAPI** service (`/search`, `/trace`, `/search_trace`, 
 
 - `tools/generate_toy_mbse_xml.py` — generate `data/raw/sample_mbse.xml`
 - `tools/generate_toy_mbse_xml_many_v2.py` — generate v2 XML (multi-theme, realistic wording)
-- `ingest/parse_toy_mbse.py` — parse XML → JSONL outputs:
+- `ingest/parse_toy_mbse.py` — parse XML → JSONL outputs (baseline sample):
   - `data/processed/nodes.jsonl`
   - `data/processed/edges.jsonl`
   - `data/processed/chunks.jsonl`
@@ -67,6 +68,7 @@ v2 covers: Over/Under-voltage, Thermal, Vibration, Cooling, Insulation — more 
 
 - Python **3.11**
 - Docker Desktop (for Qdrant + API via compose)
+- (Optional, for `/ask`) OpenAI API key via `OPENAI_API_KEY`
 
 ---
 
@@ -152,17 +154,15 @@ curl -s -X POST "http://127.0.0.1:8000/search" \
 Expected: for the sample dataset, top hit should be `BLK-100 (Power_Module)`.
 
 ### 4) Traceability via API (graph k-hop)
-
 ```bash
 curl -s -X POST "http://127.0.0.1:8000/trace" \
   -H "Content-Type: application/json" \
-  -d '{"start_id":"REQ-001","k":2}' && echo
+  -d '{"start_id":"REQ-006","k":2}' && echo
 ```
 
-Expected: `paths` contains `["REQ-001","FUNC-010","BLK-100"]` for the toy dataset.
+Expected (v2 edges): `paths` contains something like `["REQ-006","FUNC-006","BLK-006"]`.
 
 ### 5) Search + Trace (semantic retrieval + graph traversal)
-
 ```bash
 curl -s -X POST "http://127.0.0.1:8000/search_trace" \
   -H "Content-Type: application/json" \
@@ -172,6 +172,27 @@ curl -s -X POST "http://127.0.0.1:8000/search_trace" \
 Returns:
 - `hits`: top-k semantic matches from Qdrant
 - `trace_paths`: k-hop paths starting from the top hit's `source_id`
+
+### 6) Ask (RAG generation with citations)
+
+`/ask` retrieves top-k evidence chunks from Qdrant, optionally adds trace paths, then uses an LLM to generate an answer grounded in the evidence (with citations like `[1][2]`).
+
+Set your OpenAI key (host shell), then rebuild the api container so it is passed in:
+```bash
+export OPENAI_API_KEY="sk-..."
+docker compose up -d --build api
+```
+
+Run:
+```bash
+curl -s -X POST "http://127.0.0.1:8000/ask" \
+  -H "Content-Type: application/json" \
+  -d '{"query":"Which function activates clamp when voltage is too high?","top_k":5,"trace_k":2}' && echo
+```
+
+Notes:
+- If `OPENAI_API_KEY` is not set, `/ask` returns a stub response — retrieval and trace still work, useful for demos without a key.
+- If evidence is insufficient for the question, the model returns `UNKNOWN` by design — no hallucination.
 
 ---
 
@@ -230,7 +251,6 @@ python eval/run_eval.py 3 eval/queries_v2.jsonl mbse_chunks_v2
 ## Troubleshooting
 
 ### `/docs` (or API behavior) not updating after code changes
-
 ```bash
 docker compose restart api
 # if you changed dependencies / Dockerfile:
@@ -238,7 +258,6 @@ docker compose up -d --build api
 ```
 
 ### API container exits / import errors
-
 ```bash
 docker compose ps
 docker compose logs -n 200 api
@@ -250,7 +269,6 @@ docker compose up -d --build api
 ```
 
 ### API returns "Qdrant not reachable"
-
 ```bash
 docker compose ps
 docker compose logs -n 80 api
@@ -272,7 +290,8 @@ python ingest/index_chunks_v2_st.py
 
 ## Next steps (roadmap)
 
-- [ ] Add `POST /ask` for full RAG (retrieve → LLM generate + citations)
-- [ ] Support real EA/XMI exports (beyond synthetic XML)
+- [x] `POST /ask` (RAG generation): retrieve evidence → LLM answer + citations
+- [ ] Upgrade `/ask` towards Graph-RAG: retrieve anchor elements → graph expansion (k-hop) → generate from expanded context
+- [ ] Test on public SysML v2 / real EA exports as next-stage data source
 - [ ] Expand evaluation queries (10–50), add latency benchmarks
 - [ ] CI/CD (GitHub Actions) + demo video

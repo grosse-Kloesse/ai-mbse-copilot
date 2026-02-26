@@ -1,9 +1,9 @@
 import json
+import os
 from pathlib import Path
 from typing import Dict, List
 
-EDGES_FILE = Path("/app/data/processed/edges.jsonl")
-
+EDGES_FILE = Path(os.getenv("EDGES_FILE", "/app/data/processed/v2/edges.jsonl"))
 
 def load_edges() -> List[dict]:
     edges: List[dict] = []
