@@ -1,0 +1,274 @@
+<?xml  version='1.0' encoding='windows-1252' ?>
+<xmi:XMI xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmi:version="2.1" xmlns:uml="http://schema.omg.org/spec/UML/2.1" xmlns:thecustomprofile="http://www.sparxsystems.com/profiles/thecustomprofile/1.0" xmlns:SysML="http://www.omg.org/spec/SysML/20161101/SysML">
+	<xmi:Documentation exporter="Enterprise Architect" exporterVersion="6.5" exporterID="1716"/>
+	<uml:Model xmi:type="uml:Model" name="EA_Model" visibility="public">
+		<packagedElement xmi:type="uml:Package" xmi:id="EAPK_C40DE489_E0E5_4b5d_934A_E9619D5CE95B" name="Pkg_Anforderungen" visibility="public">
+			<packagedElement xmi:type="uml:Class" xmi:id="EAID_FB3B7B65_43DD_46c3_884A_62492FB01889" name="Beschleunigung" visibility="public"/>
+			<packagedElement xmi:type="uml:Class" xmi:id="EAID_BCC28AC0_0AD8_4410_9570_D770CB6BFD5F" name="Beschleunigungszeit" visibility="public"/>
+			<packagedElement xmi:type="uml:Class" xmi:id="EAID_842523F4_3152_48cd_9301_2DF1900D883B" name="Gesamtmasse_Fahrrad" visibility="public"/>
+		</packagedElement>
+		<thecustomprofile:Beschleunigung base_Class="EAID_FB3B7B65_43DD_46c3_884A_62492FB01889" Beschleunigung="0,8"/>
+		<thecustomprofile:Einheit base_Class="EAID_FB3B7B65_43DD_46c3_884A_62492FB01889" Einheit="m/s²"/>
+		<SysML:requirement base_Class="EAID_FB3B7B65_43DD_46c3_884A_62492FB01889" id="F_002" text="Beschleunigung auf 0.8 m/s²"/>
+		<thecustomprofile:Einheit base_Class="EAID_BCC28AC0_0AD8_4410_9570_D770CB6BFD5F" Einheit="s"/>
+		<SysML:requirement base_Class="EAID_BCC28AC0_0AD8_4410_9570_D770CB6BFD5F" id="F_003" text="Beschleunigungszeit auf 25km/s bis 9s"/>
+		<thecustomprofile:Beschleunigungszeit base_Class="EAID_BCC28AC0_0AD8_4410_9570_D770CB6BFD5F" Beschleunigungszeit="9"/>
+		<thecustomprofile:Masse base_Class="EAID_842523F4_3152_48cd_9301_2DF1900D883B" Masse="28"/>
+		<thecustomprofile:Einheit base_Class="EAID_842523F4_3152_48cd_9301_2DF1900D883B" Einheit="kg"/>
+		<SysML:requirement base_Class="EAID_842523F4_3152_48cd_9301_2DF1900D883B" id="F_001" text="Das Fahrrad darf in Summe nicht mehr als 28kg wiegen.&#xA;"/>
+	</uml:Model>
+	<xmi:Extension extender="Enterprise Architect" extenderID="6.5">
+		<elements>
+			<element xmi:idref="EAPK_C40DE489_E0E5_4b5d_934A_E9619D5CE95B" xmi:type="uml:Package" name="Pkg_Anforderungen" scope="public">
+				<model package2="EAID_C40DE489_E0E5_4b5d_934A_E9619D5CE95B" package="EAPK_D4D5BAD7_5956_45ab_9F28_94AAFCE55EAE" tpos="0" ea_localid="11" ea_eleType="package"/>
+				<properties isSpecification="false" sType="Package" nType="0" scope="public"/>
+				<project author="lin" version="1.0" phase="1.0" created="2024-03-06 14:49:58" modified="2024-03-07 09:09:05" complexity="1" status="Proposed"/>
+				<code gentype="Java"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+				<tags/>
+				<xrefs/>
+				<extendedProperties tagged="0" package_name="Model"/>
+				<packageproperties version="1.0" tpos="0"/>
+				<paths/>
+				<times created="2024-03-06 14:49:58" modified="2024-03-06 14:49:58"/>
+				<flags iscontrolled="0" isprotected="0" batchsave="0" batchload="0" usedtd="0" logxml="0" packageFlags="isModel=1;VPK=7;VPKG=7;"/>
+			</element>
+			<element xmi:idref="EAID_FB3B7B65_43DD_46c3_884A_62492FB01889" xmi:type="uml:Requirement" name="Beschleunigung" scope="public">
+				<model package="EAPK_C40DE489_E0E5_4b5d_934A_E9619D5CE95B" tpos="0" ea_localid="144" ea_eleType="element"/>
+				<properties isSpecification="false" sType="Requirement" nType="0" scope="public" stereotype="requirement"/>
+				<project author="lin" version="1.0" phase="1.0" created="2024-03-06 15:55:56" modified="2024-03-07 11:29:29" complexity="1" status="Proposed" difficulty="Medium" priority="Medium"/>
+				<code gentype="&lt;none&gt;"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+				<tags>
+					<tag xmi:id="EAID_F85B5F67_F4FB_4bcf_98BE_996385C9A032" name="Beschleunigung" value="0,8" modelElement="EAID_FB3B7B65_43DD_46c3_884A_62492FB01889"/>
+					<tag xmi:id="EAID_92BEA8A9_9E0B_4f2e_A275_6598758B386F" name="Einheit" value="m/s²" modelElement="EAID_FB3B7B65_43DD_46c3_884A_62492FB01889"/>
+					<tag xmi:id="EAID_00000DED_3AF1_773a_8379_0202BDD73AAE" name="id" value="F_002" modelElement="EAID_FB3B7B65_43DD_46c3_884A_62492FB01889"/>
+					<tag xmi:id="EAID_00415985_D789_37d7_A089_BA14A133A55E" name="text" value="&lt;memo&gt;#NOTES#Beschleunigung auf 0.8 m/s²" modelElement="EAID_FB3B7B65_43DD_46c3_884A_62492FB01889"/>
+				</tags>
+				<xrefs value="$XREFPROP=$XID={C8DA5D60-4512-4b65-9E3B-39A50D6A0354}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=requirement;FQName=SysML1.4::requirement;@ENDSTEREO;$DES;$CLT={FB3B7B65-43DD-46c3-884A-62492FB01889}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+				<extendedProperties tagged="0" package_name="Pkg_Anforderungen"/>
+				<links>
+					<Dependency xmi:id="EAID_9B07A062_CA90_4e04_BE83_5D237A7F7ED5" start="EAID_0ABA6B51_76CD_40d4_8B25_5E902BE0706F" end="EAID_FB3B7B65_43DD_46c3_884A_62492FB01889"/>
+				</links>
+			</element>
+			<element xmi:idref="EAID_BCC28AC0_0AD8_4410_9570_D770CB6BFD5F" xmi:type="uml:Requirement" name="Beschleunigungszeit" scope="public">
+				<model package="EAPK_C40DE489_E0E5_4b5d_934A_E9619D5CE95B" tpos="0" ea_localid="159" ea_eleType="element"/>
+				<properties isSpecification="false" sType="Requirement" nType="0" scope="public" stereotype="requirement"/>
+				<project author="lin" version="1.0" phase="1.0" created="2024-03-07 09:11:00" modified="2024-03-07 09:11:10" complexity="1" status="Proposed" difficulty="Medium" priority="Medium"/>
+				<code gentype="&lt;none&gt;"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+				<tags>
+					<tag xmi:id="EAID_C849DCD0_4A81_4b20_84E9_473B9C1BF5B0" name="Beschleunigungszeit" value="9" modelElement="EAID_BCC28AC0_0AD8_4410_9570_D770CB6BFD5F"/>
+					<tag xmi:id="EAID_77B14652_0C3B_4190_9783_5DD230A8D6B7" name="Einheit" value="s" modelElement="EAID_BCC28AC0_0AD8_4410_9570_D770CB6BFD5F"/>
+					<tag xmi:id="EAID_00000DED_3AF1_773a_B0EC_CB915239FA31" name="id" value="F_003" modelElement="EAID_BCC28AC0_0AD8_4410_9570_D770CB6BFD5F"/>
+					<tag xmi:id="EAID_00415985_D789_37d7_A607_DBD4ABFEC7FA" name="text" value="&lt;memo&gt;#NOTES#Beschleunigungszeit auf 25km/s bis 9s" modelElement="EAID_BCC28AC0_0AD8_4410_9570_D770CB6BFD5F"/>
+				</tags>
+				<xrefs value="$XREFPROP=$XID={C3D305B2-1F51-4d1c-B4FA-27163C791099}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=requirement;FQName=SysML1.4::requirement;@ENDSTEREO;$DES;$CLT={BCC28AC0-0AD8-4410-9570-D770CB6BFD5F}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+				<extendedProperties tagged="0" package_name="Pkg_Anforderungen"/>
+				<links>
+					<Dependency xmi:id="EAID_7A6BF065_9B18_4c72_904F_0FBF48979CB0" start="EAID_0ABA6B51_76CD_40d4_8B25_5E902BE0706F" end="EAID_BCC28AC0_0AD8_4410_9570_D770CB6BFD5F"/>
+				</links>
+			</element>
+			<element xmi:idref="EAID_842523F4_3152_48cd_9301_2DF1900D883B" xmi:type="uml:Requirement" name="Gesamtmasse_Fahrrad" scope="public">
+				<model package="EAPK_C40DE489_E0E5_4b5d_934A_E9619D5CE95B" tpos="0" ea_localid="143" ea_eleType="element"/>
+				<properties isSpecification="false" sType="Requirement" nType="0" scope="public" stereotype="requirement"/>
+				<project author="lin" version="1.0" phase="1.0" created="2024-03-06 14:51:41" modified="2024-03-06 14:52:03" complexity="1" status="Proposed" difficulty="Medium" priority="Medium"/>
+				<code gentype="&lt;none&gt;"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+				<tags>
+					<tag xmi:id="EAID_3F03BCC9_2524_4015_85F8_B9D70D06A512" name="Einheit" value="kg" modelElement="EAID_842523F4_3152_48cd_9301_2DF1900D883B"/>
+					<tag xmi:id="EAID_00000DED_3AF1_773a_91EA_6477218E4DCE" name="id" value="F_001" modelElement="EAID_842523F4_3152_48cd_9301_2DF1900D883B"/>
+					<tag xmi:id="EAID_8A63FC95_E5E5_431d_B7E7_47149838B849" name="Masse" value="28" modelElement="EAID_842523F4_3152_48cd_9301_2DF1900D883B"/>
+					<tag xmi:id="EAID_00415985_D789_37d7_9DB0_97FC35BE0ED5" name="text" value="&lt;memo&gt;#NOTES#Das Fahrrad darf in Summe nicht mehr als 28kg wiegen.&#xA;" modelElement="EAID_842523F4_3152_48cd_9301_2DF1900D883B"/>
+				</tags>
+				<xrefs value="$XREFPROP=$XID={8E53F2FF-BF72-40d5-BB2B-28CF56D9CD80}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=requirement;FQName=SysML1.4::requirement;@ENDSTEREO;$DES;$CLT={842523F4-3152-48cd-9301-2DF1900D883B}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+				<extendedProperties tagged="0" package_name="Pkg_Anforderungen"/>
+				<links>
+					<Dependency xmi:id="EAID_0E6A4B22_6B40_4247_9DA9_143B4405E66D" start="EAID_0ABA6B51_76CD_40d4_8B25_5E902BE0706F" end="EAID_842523F4_3152_48cd_9301_2DF1900D883B"/>
+				</links>
+			</element>
+		</elements>
+		<connectors>
+			<connector xmi:idref="EAID_9B07A062_CA90_4e04_BE83_5D237A7F7ED5">
+				<source xmi:idref="EAID_0ABA6B51_76CD_40d4_8B25_5E902BE0706F">
+					<model ea_localid="84" type="Class" name="Fahrrad"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Non-Navigable;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_FB3B7B65_43DD_46c3_884A_62492FB01889">
+					<model ea_localid="144" type="Requirement" name="Beschleunigung"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="32"/>
+				<properties ea_type="Dependency" stereotype="satisfy" direction="Source -&gt; Destination"/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels mb="«satisfy»"/>
+				<extendedProperties conditional="«satisfy»" virtualInheritance="0"/>
+				<style/>
+				<xrefs value="$XREFPROP=$XID={79A5C63E-8B1A-4b47-8BB4-06326D4EB20B}$XID;$NAM=Stereotypes$NAM;$TYP=connector property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=satisfy;FQName=SysML1.4::satisfy;@ENDSTEREO;$DES;$CLT={9B07A062-CA90-4e04-BE83-5D237A7F7ED5}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+				<tags/>
+			</connector>
+			<connector xmi:idref="EAID_7A6BF065_9B18_4c72_904F_0FBF48979CB0">
+				<source xmi:idref="EAID_0ABA6B51_76CD_40d4_8B25_5E902BE0706F">
+					<model ea_localid="84" type="Class" name="Fahrrad"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Non-Navigable;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_BCC28AC0_0AD8_4410_9570_D770CB6BFD5F">
+					<model ea_localid="159" type="Requirement" name="Beschleunigungszeit"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="61"/>
+				<properties ea_type="Dependency" stereotype="satisfy" direction="Source -&gt; Destination"/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels mb="«satisfy»"/>
+				<extendedProperties conditional="«satisfy»" virtualInheritance="0"/>
+				<style/>
+				<xrefs value="$XREFPROP=$XID={61E3BF1F-07A4-486e-88B2-F957D84DA3DD}$XID;$NAM=Stereotypes$NAM;$TYP=connector property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=satisfy;FQName=SysML1.4::satisfy;@ENDSTEREO;$DES;$CLT={7A6BF065-9B18-4c72-904F-0FBF48979CB0}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+				<tags/>
+			</connector>
+			<connector xmi:idref="EAID_0E6A4B22_6B40_4247_9DA9_143B4405E66D">
+				<source xmi:idref="EAID_0ABA6B51_76CD_40d4_8B25_5E902BE0706F">
+					<model ea_localid="84" type="Class" name="Fahrrad"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Non-Navigable;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_842523F4_3152_48cd_9301_2DF1900D883B">
+					<model ea_localid="143" type="Requirement" name="Gesamtmasse_Fahrrad"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="31"/>
+				<properties ea_type="Dependency" stereotype="satisfy" direction="Source -&gt; Destination"/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels mb="«satisfy»"/>
+				<extendedProperties conditional="«satisfy»" virtualInheritance="0"/>
+				<style/>
+				<xrefs value="$XREFPROP=$XID={86CF5C49-2837-494a-95E0-EB86BFC2FD1C}$XID;$NAM=Stereotypes$NAM;$TYP=connector property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=satisfy;FQName=SysML1.4::satisfy;@ENDSTEREO;$DES;$CLT={0E6A4B22-6B40-4247-9DA9-143B4405E66D}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+				<tags/>
+			</connector>
+		</connectors>
+		<primitivetypes>
+			<packagedElement xmi:type="uml:Package" xmi:id="EAPrimitiveTypesPackage" name="EA_PrimitiveTypes_Package" visibility="public"/>
+		</primitivetypes>
+		<profiles>
+			<uml:Profile xmlns:uml="http://schema.omg.org/spec/UML/2.1/" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmi:version="2.1" xmi:id="thecustomprofile" nsPrefix="thecustomprofile" name="thecustomprofile" metamodelReference="mmref01">
+				<ownedComment xmi:type="uml:Comment" xmi:id="comment01" annotatedElement="thecustomprofile">
+					<body> Version:1.0</body>
+				</ownedComment>
+				<packageImport xmi:id="mmref01">
+					<importedPackage href="http://schema.omg.org/spec/UML/2.1/"/>
+				</packageImport>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="Masse" name="Masse">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Masse-base_Class" name="base_Class" association="Class_Masse">
+						<type href="http://schema.omg.org/spec/UML/2.1/Class"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Masse-Masse" name="Masse">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Class_Masse" name="A_Class_Masse" memberEnd="extension_Masse Masse-base_Class">
+					<ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="extension_Masse" name="extension_Masse" type="Masse" isComposite="true" lower="0" upper="1" memberEnd="extension_Masse Masse-base_Class"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="Einheit" name="Einheit">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Einheit-base_Class" name="base_Class" association="Class_Einheit">
+						<type href="http://schema.omg.org/spec/UML/2.1/Class"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Einheit-Einheit" name="Einheit">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Class_Einheit" name="A_Class_Einheit" memberEnd="extension_Einheit Einheit-base_Class">
+					<ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="extension_Einheit" name="extension_Einheit" type="Einheit" isComposite="true" lower="0" upper="1" memberEnd="extension_Einheit Einheit-base_Class"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="Beschleunigungszeit" name="Beschleunigungszeit">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Beschleunigungszeit-base_Class" name="base_Class" association="Class_Beschleunigungszeit">
+						<type href="http://schema.omg.org/spec/UML/2.1/Class"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Beschleunigungszeit-Beschleunigungszeit" name="Beschleunigungszeit">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Class_Beschleunigungszeit" name="A_Class_Beschleunigungszeit" memberEnd="extension_Beschleunigungszeit Beschleunigungszeit-base_Class">
+					<ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="extension_Beschleunigungszeit" name="extension_Beschleunigungszeit" type="Beschleunigungszeit" isComposite="true" lower="0" upper="1" memberEnd="extension_Beschleunigungszeit Beschleunigungszeit-base_Class"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="Beschleunigung" name="Beschleunigung">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Beschleunigung-base_Class" name="base_Class" association="Class_Beschleunigung">
+						<type href="http://schema.omg.org/spec/UML/2.1/Class"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Beschleunigung-Beschleunigung" name="Beschleunigung">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Class_Beschleunigung" name="A_Class_Beschleunigung" memberEnd="extension_Beschleunigung Beschleunigung-base_Class">
+					<ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="extension_Beschleunigung" name="extension_Beschleunigung" type="Beschleunigung" isComposite="true" lower="0" upper="1" memberEnd="extension_Beschleunigung Beschleunigung-base_Class"/>
+				</packagedElement>
+			</uml:Profile>
+		</profiles>
+		<diagrams>
+			<diagram xmi:id="EAID_1CB0CCC0_65DC_460d_8F64_21BAC9A7B740">
+				<model package="EAPK_C40DE489_E0E5_4b5d_934A_E9619D5CE95B" localID="7" owner="EAPK_C40DE489_E0E5_4b5d_934A_E9619D5CE95B" tpos="0"/>
+				<properties name="Pkg_Anforderungen" type="Custom"/>
+				<project author="lin" version="1.0" created="2024-03-06 14:51:01" modified="2024-03-07 10:03:04"/>
+				<style1 value="ShowPrivate=1;ShowProtected=1;ShowPublic=1;HideRelationships=0;Locked=0;Border=1;HighlightForeign=1;PackageContents=1;SequenceNotes=0;ScalePrintImage=0;PPgs.cx=0;PPgs.cy=0;DocSize.cx=827;DocSize.cy=1169;ShowDetails=0;Orientation=P;Zoom=100;ShowTags=0;OpParams=1;VisibleAttributeDetail=0;ShowOpRetType=1;ShowIcons=1;CollabNums=0;HideProps=0;ShowReqs=0;ShowCons=0;PaperSize=9;HideParents=0;UseAlias=0;HideAtts=0;HideOps=0;HideStereo=0;HideElemStereo=0;ShowTests=0;ShowMaint=0;ConnectorNotation=UML 2.1;ExplicitNavigability=0;ShowShape=1;AllDockable=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;m_bElementClassifier=1;SPT=1;ShowNotes=0;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;"/>
+				<style2 value="ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;KanbanActive=0;MatrixLineWidth=1;MatrixLineClr=0;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;m_bElementClassifier=1;SPT=1;MDGDgm=SysML1.4::Requirement;STBLDgm=;ShowNotes=0;OPTIONS_669E24EB=CCOMP_parts=1:;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;SuppressedCompartments=;SF=1;Theme=:119;SaveTag=D00EED3A;"/>
+				<swimlanes value="locked=false;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=1;ufh=0;hh=0;cls=0;bw=0;hli=0;bro=0;SwimlaneFont=lfh:-10,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;"/>
+				<matrixitems value="locked=false;matrixactive=false;swimlanesactive=true;kanbanactive=false;width=1;clrLine=0;"/>
+				<extendedProperties/>
+				<persistentstyle value="DGS=On=0:CNT=8:W=120:H=40:SG=0:SGH=0:AEB=0:;AR=0;DCL=0;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=1;ufh=0;hh=0;cls=0;bw=0;hli=0;bro=0;SwimlaneFont=lfh:-10,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=1;ufh=0;hh=0;cls=0;bw=0;hli=0;bro=0;SwimlaneFont=lfh:-10,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=1;ufh=0;hh=0;cls=0;bw=0;hli=0;bro=0;SwimlaneFont=lfh:-10,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=1;ufh=0;hh=0;cls=0;bw=0;hli=0;bro=0;SwimlaneFont=lfh:-10,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=1;ufh=0;hh=0;cls=0;bw=0;hli=0;bro=0;SwimlaneFont=lfh:-10,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=1;ufh=0;hh=0;cls=0;bw=0;hli=0;bro=0;SwimlaneFont=lfh:-10,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=1;ufh=0;hh=0;cls=0;bw=0;hli=0;bro=0;SwimlaneFont=lfh:-10,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=1;ufh=0;hh=0;cls=0;bw=0;hli=0;bro=0;SwimlaneFont=lfh:-10,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=1;ufh=0;hh=0;cls=0;bw=0;hli=0;bro=0;SwimlaneFont=lfh:-10,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;;Swimlanes=locked=false;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=1;ufh=0;hh=0;cls=0;bw=0;hli=0;bro=0;SwimlaneFont=lfh:-10,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;;"/>
+				<xrefs/>
+				<elements>
+					<element geometry="Left=590;Top=292;Right=700;Bottom=411;" subject="EAID_BCC28AC0_0AD8_4410_9570_D770CB6BFD5F" seqno="1" style="DUID=D8DD9B95;HideIcon=0;UCRect=1;Tag=1;AttCustom=0;OpCustom=0;RzO=1;"/>
+					<element geometry="Left=358;Top=292;Right=468;Bottom=411;" subject="EAID_FB3B7B65_43DD_46c3_884A_62492FB01889" seqno="2" style="HideIcon=0;UCRect=1;Tag=1;AttCustom=0;OpCustom=0;RzO=1;DUID=57C5F947;"/>
+					<element geometry="Left=124;Top=272;Right=234;Bottom=404;" subject="EAID_842523F4_3152_48cd_9301_2DF1900D883B" seqno="3" style="HideIcon=0;UCRect=1;Tag=1;AttCustom=0;OpCustom=0;RzO=1;DUID=B4B011C2;"/>
+					<element geometry="Left=322;Top=61;Right=460;Bottom=224;" subject="EAID_0ABA6B51_76CD_40d4_8B25_5E902BE0706F" seqno="4" style="NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;HideIcon=0;AttPro=0;AttPkg=0;AttPub=0;Constraint=1;AttPri=0;AttCustom=0;OpCustom=0;RzO=1;DUID=669E24EB;"/>
+					<element geometry="Left=10;Top=10;Right=737;Bottom=448;" subject="EAID_C40DE489_E0E5_4b5d_934A_E9619D5CE95B" seqno="5" style="NSL=1;DUID=B7FD7BAD;"/>
+					<element geometry="SX=0;SY=0;EX=0;EY=0;EDGE=4;$LLB=;LLT=;LMT=;LMB=CX=37:CY=14:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_0E6A4B22_6B40_4247_9DA9_143B4405E66D" style="Mode=3;EOID=B4B011C2;SOID=669E24EB;Color=-1;LWidth=0;Hidden=0;"/>
+					<element geometry="SX=0;SY=0;EX=0;EY=0;EDGE=3;$LLB=;LLT=;LMT=;LMB=CX=37:CY=14:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_9B07A062_CA90_4e04_BE83_5D237A7F7ED5" style="Mode=3;EOID=57C5F947;SOID=669E24EB;Color=-1;LWidth=0;Hidden=0;"/>
+					<element geometry="SX=0;SY=0;EX=0;EY=0;EDGE=2;$LLB=;LLT=;LMT=;LMB=CX=37:CY=14:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_7A6BF065_9B18_4c72_904F_0FBF48979CB0" style="Mode=3;EOID=D8DD9B95;SOID=669E24EB;Color=-1;LWidth=0;Hidden=0;"/>
+				</elements>
+			</diagram>
+		</diagrams>
+	</xmi:Extension>
+</xmi:XMI>
