@@ -1,0 +1,101 @@
+================================================================================
+QUERY #1
+In welchem Package liegt der Akku
+STATUS: NO_EXPECTATION
+ANSWER:
+Akku 位于 package：Model / Pkg_Fahrradsystem / bdd_Blocks
+
+================================================================================
+QUERY #2
+In welchem Diagramm erscheint der E-Motor
+STATUS: NO_EXPECTATION
+ANSWER:
+E-Motor 出现在这些 diagram 中：
+- Fahrradsystem [AB4214F0_398F_4cc2_8591_7E26B6E83FDA]
+
+================================================================================
+QUERY #3
+Zu welchem System gehört die Energieversorgung
+STATUS: NO_EXPECTATION
+ANSWER:
+Energieversorgung 的直接输出关系目标是：Fahrrad [0ABA6B51_76CD_40d4_8B25_5E902BE0706F] (Block)
+
+================================================================================
+QUERY #4
+Welche Elemente enthält das bdd_Blocks Package
+STATUS: NO_EXPECTATION
+ANSWER:
+bdd_Blocks package 中包含以下元素：
+- Abtrieb [9371CED8_0678_412c_90AF_D1B69C8A9BFE]
+- Akku [D0FFC59D_20F4_44d0_8042_ABEB4DF6AF72]
+- Antrieb [37AFD518_251D_4f7b_8101_DB5D5718BFAE]
+- Bremssystem [3FAC79F9_BBAD_4589_B7DA_AD9EDCCDF274]
+- E-Motor [28A0BEED_CFAE_4d48_BD45_9118B9095222]
+- elektrischer Antrieb [765A432C_BB6B_4619_8B84_599B96635F62]
+- Energieversorgung [6D0AA0FC_D760_4147_AB32_E15B187055E5]
+- Fahrrad [0ABA6B51_76CD_40d4_8B25_5E902BE0706F]
+- Felge [3CC59B7F_6CA7_4235_AFA6_5D42A443758C]
+- Hinterrad [322F1ED0_BB19_47f4_BB58_2AE20C2FF636]
+- Hinterradbremse [9CE40808_1141_44b2_B404_9EC5032170E3]
+- Kette [896D9C03_5B05_4574_B093_56FABFAABE74]
+- Kettenblatt [C589B7E5_5E7E_4f8e_9E76_E5957021987A]
+- Kurbel [8C742257_FE66_4135_8522_0671DD718ED4]
+- Laufrad [85E70FA5_FD0C_4254_B66D_D397A8FEF0BC]
+- Lenker [CA8E8BD2_780B_4948_9756_DD10D7F9C671]
+- Mechanik Struktur [3A26B4DA_E67D_44a4_A590_7A68ECF6312C]
+- mechanischer Antrieb [36CC82F8_4F9E_4eab_9C14_687A97F1F2FE]
+- Momentenwandler [EE71FEB8_50AD_4277_BD32_BC74F744F5C4]
+- Pedale [487250BA_0776_43c5_A3F6_370C90D6998B]
+- Rahmen [A12C30F7_5BCB_4ed5_B093_F8E8C46A36D5]
+- Reifen [52DBD5E5_CBFD_457e_BFFA_F7000BAE4D88]
+- Ritzel [13254014_94E4_47f9_8ACB_1DC228E29F4D]
+- Sattel [D6A034C3_2D07_4d79_A807_16097FEB9786]
+- Steuerung [FC35C227_F39F_4cd6_B113_E3386DA17579]
+- Vorradbremse [03E4AD70_9C27_486e_A0E0_C5B8467D4FB8]
+
+================================================================================
+QUERY #5
+Was ist der Strom des Akku
+STATUS: NO_EXPECTATION
+ANSWER:
+Akku 的 strom：I_Max = 15 A
+
+================================================================================
+QUERY #6
+Was ist die Spannung des Akku
+STATUS: NO_EXPECTATION
+ANSWER:
+未在 Akku 中找到与“spannung”对应的属性。
+Akku 当前可提取到的属性有：
+- I_Max = 15 A
+
+================================================================================
+QUERY #7
+Wie hoch ist die Beschleunigung
+STATUS: NO_EXPECTATION
+ANSWER:
+Beschleunigung 的 beschleunigung：Beschleunigung: 0,8
+
+================================================================================
+QUERY #8
+Wie hoch ist die Beschleunigungszeit
+STATUS: NO_EXPECTATION
+ANSWER:
+Beschleunigungszeit 的 beschleunigungszeit：Beschleunigungszeit: 9
+
+================================================================================
+QUERY #9
+Wie hoch ist die Gesamtmasse_Fahrrad
+STATUS: NO_EXPECTATION
+ANSWER:
+Gesamtmasse_Fahrrad 的 masse：Masse: 28
+
+
+========================================================================================================================
+SUMMARY
+========================================================================================================================
+TOTAL           : 9
+PASS            : 0
+FAIL            : 0
+NO_EXPECTATION  : 9
+ACCURACY        : 0.00%

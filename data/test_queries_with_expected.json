@@ -1,0 +1,61 @@
+[
+  {
+    "query": "In welchem Package liegt der Akku",
+    "must_contain": [
+      "Model / Pkg_Fahrradsystem / bdd_Blocks"
+    ]
+  },
+  {
+    "query": "In welchem Diagramm erscheint der E-Motor",
+    "must_contain": [
+      "Fahrradsystem",
+      "AB4214F0_398F_4cc2_8591_7E26B6E83FDA"
+    ]
+  },
+  {
+    "query": "Zu welchem System gehört die Energieversorgung",
+    "must_contain": [
+      "Fahrrad",
+      "0ABA6B51_76CD_40d4_8B25_5E902BE0706F"
+    ]
+  },
+  {
+    "query": "Welche Elemente enthält das bdd_Blocks Package",
+    "must_contain": [
+      "Akku",
+      "E-Motor",
+      "Momentenwandler",
+      "Steuerung"
+    ]
+  },
+  {
+    "query": "Was ist der Strom des Akku",
+    "must_contain": [
+      "I_Max = 15 A"
+    ]
+  },
+  {
+    "query": "Was ist die Spannung des Akku",
+    "must_contain": [
+      "未在 Akku 中找到与“spannung”对应的属性"
+    ]
+  },
+  {
+    "query": "Wie hoch ist die Beschleunigung",
+    "must_contain": [
+      "Beschleunigung: 0,8"
+    ]
+  },
+  {
+    "query": "Wie hoch ist die Beschleunigungszeit",
+    "must_contain": [
+      "Beschleunigungszeit: 9"
+    ]
+  },
+  {
+    "query": "Wie hoch ist die Gesamtmasse_Fahrrad",
+    "must_contain": [
+      "Masse: 28"
+    ]
+  }
+]

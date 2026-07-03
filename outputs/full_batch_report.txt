@@ -1,0 +1,2286 @@
+MODEL: intfloat/multilingual-e5-small
+CHUNKS: data/processed/bike/chunks.jsonl
+EMBEDDINGS: data/processed/bike/embeddings_e5_small/embeddings.npy
+TOTAL_QUERIES: 9
+
+========================================================================================================================
+QUERY #1
+========================================================================================================================
+In welchem Package liegt der Akku
+STATUS: NO_EXPECTATION
+
+Detected intent    : locate_in_package
+Target entity      : Akku
+Asked slot         : None
+Expected answer    : path
+Reasoning mode     : direct_field_lookup
+Query tokens       : ['akku']
+Rewritten queries  : ['Akku', 'Akku package', 'Akku path']
+Retrieval plan:
+  1. lookup_entity_node - 先定位目标元素节点
+  2. lookup_package_from_node - 从节点中抽取 package/path
+  3. semantic_fallback - 若失败则语义兜底
+
+====================================================================================================
+Final Answer:
+Akku 位于 package：Model / Pkg_Fahrradsystem / bdd_Blocks
+====================================================================================================
+====================================================================================================
+rank         : 1
+score        : 1.1500
+raw_score    : 0.9000
+type_weight  : 1.00
+lexical_bonus: 0.2500
+source       : lookup_entity_node
+chunk_id     : node::EAID_D0FFC59D_20F4_44d0_8042_ABEB4DF6AF72::0
+chunk_type   : node
+name         : Akku
+type         : Block
+source_id    : None
+----------------------------------------------------------------------------------------------------
+[Block] Akku [D0FFC59D_20F4_44d0_8042_ABEB4DF6AF72]
+Package: Model / Pkg_Fahrradsystem / bdd_Blocks
+Appears in diagrams:
+- Fahrradsystem [AB4214F0_398F_4cc2_8591_7E26B6E83FDA]
+Properties:
+- I_Max = 15 A
+Connected relations:
+- Association [919AA456_5F73_4de5_86BA_C4770172D25F]: Akku [D0FFC59D_20F4_44d0_8042_ABEB4DF6AF72] -> Energieversorgung [6D0AA0FC_D760_4147_AB32_E15B187055E5]
+====================================================================================================
+rank         : 2
+score        : 1.1092
+raw_score    : 0.8214
+type_weight  : 1.18
+lexical_bonus: 0.1400
+source       : semantic_fallback
+chunk_id     : package::EAPK_46ABB398_367D_48a8_AE3D_AA9C8B161DF8::0
+chunk_type   : package
+name         : bdd_Blocks
+type         : Package
+source_id    : None
+----------------------------------------------------------------------------------------------------
+[Package] bdd_Blocks [46ABB398_367D_48a8_AE3D_AA9C8B161DF8]
+Path: Model / Pkg_Fahrradsystem / bdd_Blocks
+Elements:
+- Abtrieb [9371CED8_0678_412c_90AF_D1B69C8A9BFE]
+- Akku [D0FFC59D_20F4_44d0_8042_ABEB4DF6AF72]
+- Antrieb [37AFD518_251D_4f7b_8101_DB5D5718BFAE]
+- Bremssystem [3FAC79F9_BBAD_4589_B7DA_AD9EDCCDF274]
+- E-Motor [28A0BEED_CFAE_4d48_BD45_9118B9095222]
+- elektrischer Antrieb [765A432C_BB6B_4619_8B84_599B96635F62]
+- Energieversorgung [6D0AA0FC_D760_4147_AB32_E15B187055E5]
+- Fahrrad [0ABA6B51_76CD_40d4_8B25_5E902BE0706F]
+- Felge [3CC59B7F_6CA7_4235_AFA6_5D42A443758C]
+- Hinterrad [322F1ED0_BB19_47f4_BB58_2AE20C2FF636]
+- Hinterradbremse [9CE40808_1141_44b2_B404_9EC5032170E3]
+- Kette [896D9C03_5B05_4574_B093_56FABFAABE74]
+- Kettenblatt [C589B7E5_5E7E_4f8e_9E76_E5957021987A]
+- Kurbel [8C742257_FE66_4135_8522_0671DD718ED4]
+- Laufrad [85E70FA5_FD0C_4254_B66D_D397A8FEF0BC]
+Additional elements omitted.
+====================================================================================================
+rank         : 3
+score        : 0.9751
+raw_score    : 0.8351
+type_weight  : 1.00
+lexical_bonus: 0.1400
+source       : semantic_fallback
+chunk_id     : node::EAID_6D0AA0FC_D760_4147_AB32_E15B187055E5::0
+chunk_type   : node
+name         : Energieversorgung
+type         : Block
+source_id    : None
+----------------------------------------------------------------------------------------------------
+[Block] Energieversorgung [6D0AA0FC_D760_4147_AB32_E15B187055E5]
+Package: Model / Pkg_Fahrradsystem / bdd_Blocks
+Appears in diagrams:
+- Fahrradsystem [AB4214F0_398F_4cc2_8591_7E26B6E83FDA]
+Connected relations:
+- Association [919AA456_5F73_4de5_86BA_C4770172D25F]: Akku [D0FFC59D_20F4_44d0_8042_ABEB4DF6AF72] -> Energieversorgung [6D0AA0FC_D760_4147_AB32_E15B187055E5]
+- Association [DE0659B3_322B_40c0_A72A_24510C5985B5]: Energieversorgung [6D0AA0FC_D760_4147_AB32_E15B187055E5] -> Fahrrad [0ABA6B51_76CD_40d4_8B25_5E902BE0706F]
+====================================================================================================
+rank         : 4
+score        : 0.9739
+raw_score    : 0.8509
+type_weight  : 0.98
+lexical_bonus: 0.1400
+source       : semantic_fallback
+chunk_id     : relation::EAID_919AA456_5F73_4de5_86BA_C4770172D25F::0
+chunk_type   : relation
+name         : None
+type         : Association
+source_id    : EAID_D0FFC59D_20F4_44d0_8042_ABEB4DF6AF72
+----------------------------------------------------------------------------------------------------
+[Association] Akku [D0FFC59D_20F4_44d0_8042_ABEB4DF6AF72] -> Energieversorgung [6D0AA0FC_D760_4147_AB32_E15B187055E5]
+Relation type: uml:Association
+Source element: Akku [D0FFC59D_20F4_44d0_8042_ABEB4DF6AF72] (Block)
+Target element: Energieversorgung [6D0AA0FC_D760_4147_AB32_E15B187055E5] (Block)
+Package: Model / Pkg_Fahrradsystem / bdd_Blocks
+Appears in diagrams:
+- Fahrradsystem [AB4214F0_398F_4cc2_8591_7E26B6E83FDA]
+Direction: Source -> Destination
+====================================================================================================
+rank         : 5
+score        : 0.9692
+raw_score    : 0.8214
+type_weight  : 1.18
+lexical_bonus: 0.0000
+source       : semantic_fallback
+chunk_id     : package::EAPK_3D58D932_E46B_4f66_B381_A6BF3BFB2AAF::0
+chunk_type   : package
+name         : Sequence Diagramm
+type         : Package
+source_id    : None
+----------------------------------------------------------------------------------------------------
+[Package] Sequence Diagramm [3D58D932_E46B_4f66_B381_A6BF3BFB2AAF]
+Path: Model / Pkg_Fahrradsystem / Sequence Diagramm
+Child packages:
+- Signal [9D553576_70F8_43c4_8680_ADFC5D3D0D54]
+Elements:
+- Anzeigen [E38B2C81_5864_42de_BACB_095C4DA2952C]
+- Motor [8DD6AAC1_3414_4a11_B0AC_A8ED70368750]
+- Batterie [9BCF3D2A_BC76_4154_A728_3E8214D5A8DF]
+- E_Antrieb Kontrollesystem [6A185400_A455_4cda_90AD_816E115E19EC]
+- Elektrisches System [16B58248_8877_4d50_84C4_3F34E4293774]
+Diagrams:
+- Sequence Diagramm [EA12D2DD_B57C_4012_BD4E_01F2C0539B32]
+- Fahren [0332B8D0_E09B_4f95_BEF5_034EBD8D974D]
+- Fahrradsystem [455C566B_E82A_4055_97E7_B22993085F64]
+====================================================================================================
+rank         : 6
+score        : 0.9683
+raw_score    : 0.8206
+type_weight  : 1.18
+lexical_bonus: 0.0000
+source       : semantic_fallback
+chunk_id     : package::EAPK_9D992AFA_AD43_4989_BB2C_1E02ADBABBBF::0
+chunk_type   : package
+name         : Pkg_Fahrradsystem
+type         : Package
+source_id    : None
+----------------------------------------------------------------------------------------------------
+[Package] Pkg_Fahrradsystem [9D992AFA_AD43_4989_BB2C_1E02ADBABBBF]
+Path: Model / Pkg_Fahrradsystem
+Child packages:
+- bdd_Blocks [46ABB398_367D_48a8_AE3D_AA9C8B161DF8]
+- Use_Case_Diagramm [D48C8892_7816_4d65_98BF_C8C5A8601B35]
+- Activity Diagramm [8B18672C_7CD0_4383_904A_48380F2E9A22]
+- State Maschine [C30845A4_A8B9_48bb_BDA9_E5F7DE109281]
+- Sequence Diagramm [3D58D932_E46B_4f66_B381_A6BF3BFB2AAF]
+Elements:
+- Fahrer/in [8109BCA9_A64D_4b79_98B9_E32DADA3240F]
+Diagrams:
+- Fahrradsystem [AB4214F0_398F_4cc2_8591_7E26B6E83FDA]
+- Fahrer/in [DDBBFF1A_5003_4b77_BB42_BE9D623FFF6F]
+====================================================================================================
+rank         : 7
+score        : 0.9618
+raw_score    : 0.8151
+type_weight  : 1.18
+lexical_bonus: 0.0000
+source       : semantic_fallback
+chunk_id     : package::EAPK_D4D5BAD7_5956_45ab_9F28_94AAFCE55EAE::0
+chunk_type   : package
+name         : Model
+type         : Package
+source_id    : None
+----------------------------------------------------------------------------------------------------
+[Package] Model [D4D5BAD7_5956_45ab_9F28_94AAFCE55EAE]
+Path: Model
+Child packages:
+- Pkg_Anforderungen [C40DE489_E0E5_4b5d_934A_E9619D5CE95B]
+- Pkg_Fahrradsystem [9D992AFA_AD43_4989_BB2C_1E02ADBABBBF]
+- Value Types [57C64677_6667_43a7_9F94_75DDA8348B20]
+- Primitive Value Types Library [17EA72BF_28EF_440e_BC13_98A273467E0F]
+====================================================================================================
+rank         : 8
+score        : 0.9573
+raw_score    : 0.8112
+type_weight  : 1.18
+lexical_bonus: 0.0000
+source       : semantic_fallback
+chunk_id     : package::EAPK_C40DE489_E0E5_4b5d_934A_E9619D5CE95B::0
+chunk_type   : package
+name         : Pkg_Anforderungen
+type         : Package
+source_id    : None
+----------------------------------------------------------------------------------------------------
+[Package] Pkg_Anforderungen [C40DE489_E0E5_4b5d_934A_E9619D5CE95B]
+Path: Model / Pkg_Anforderungen
+Elements:
+- Beschleunigung [FB3B7B65_43DD_46c3_884A_62492FB01889]
+- Beschleunigungszeit [BCC28AC0_0AD8_4410_9570_D770CB6BFD5F]
+- Gesamtmasse_Fahrrad [842523F4_3152_48cd_9301_2DF1900D883B]
+Diagrams:
+- Pkg_Anforderungen [1CB0CCC0_65DC_460d_8F64_21BAC9A7B740]
+====================================================================================================
+rank         : 9
+score        : 0.9549
+raw_score    : 0.8093
+type_weight  : 1.18
+lexical_bonus: 0.0000
+source       : semantic_fallback
+chunk_id     : package::EAPK_57C64677_6667_43a7_9F94_75DDA8348B20::0
+chunk_type   : package
+name         : Value Types
+type         : Package
+source_id    : None
+----------------------------------------------------------------------------------------------------
+[Package] Value Types [57C64677_6667_43a7_9F94_75DDA8348B20]
+Path: Model / Value Types
+Elements:
+- Drehmomentkonstante [C9E4CF4D_CABB_46ec_A7D5_212C23E9995E]
+- Length [78509A15_55C5_486d_93AF_42B5834A4F27]
+- Masse [E8EAE05A_C9F3_4f1d_84FD_062D4D672216]
+- Strom [088834F4_9FF8_45a4_AAD5_B1CEEF11411C]
+Diagrams:
+- Value Types [D618B5FA_97BF_4dff_B557_C7793D89DE28]
+====================================================================================================
+rank         : 10
+score        : 0.9539
+raw_score    : 0.8084
+type_weight  : 1.18
+lexical_bonus: 0.0000
+source       : semantic_fallback
+chunk_id     : package::EAPK_17EA72BF_28EF_440e_BC13_98A273467E0F::0
+chunk_type   : package
+name         : Primitive Value Types Library
+type         : Package
+source_id    : None
+----------------------------------------------------------------------------------------------------
+[Package] Primitive Value Types Library [17EA72BF_28EF_440e_BC13_98A273467E0F]
+Path: Model / Primitive Value Types Library
+Elements:
+- Boolean [0C261B01_598C_45d3_AC6D_345270DAA331]
+- Complex [E9221A0E_4866_4989_B4A2_38DA74E71261]
+- Integer [08DF7016_CE61_491f_B2F4_DC66CBBF826D]
+- Number [5ABBF600_B548_4c3e_B542_6B3F185A51E8]
+- Real [97C91C8D_5B26_4db2_8A0A_7F09812A3227]
+- String [5BE3D113_232F_463c_B841_C63396BBC498]
+Diagrams:
+- Primitive Value Types Library [060A7B69_BA1B_4097_9761_D9870AA512C6]
+
+========================================================================================================================
+QUERY #2
+========================================================================================================================
+In welchem Diagramm erscheint der E-Motor
+STATUS: NO_EXPECTATION
+
+Detected intent    : locate_in_diagram
+Target entity      : E-Motor
+Asked slot         : None
+Expected answer    : diagram_list
+Reasoning mode     : direct_field_lookup
+Query tokens       : ['motor']
+Rewritten queries  : ['E-Motor', 'E-Motor appears in diagrams', 'E-Motor diagram']
+Retrieval plan:
+  1. lookup_entity_node - 先定位目标元素节点
+  2. lookup_diagram_from_node - 从节点中抽取 Appears in diagrams
+  3. lookup_diagram_chunks_by_entity - 再直接找包含该实体的 diagram chunk
+  4. semantic_fallback - 若失败则语义兜底
+
+====================================================================================================
+Final Answer:
+E-Motor 出现在这些 diagram 中：
+- Fahrradsystem [AB4214F0_398F_4cc2_8591_7E26B6E83FDA]
+====================================================================================================
+====================================================================================================
+rank         : 1
+score        : 1.2700
+raw_score    : 0.8400
+type_weight  : 1.18
+lexical_bonus: 0.2800
+source       : lookup_diagram_chunks_by_entity
+chunk_id     : diagram::EAID_AB4214F0_398F_4cc2_8591_7E26B6E83FDA::0
+chunk_type   : diagram
+name         : Fahrradsystem
+type         : Logical
+source_id    : None
+----------------------------------------------------------------------------------------------------
+[Diagram] Fahrradsystem [AB4214F0_398F_4cc2_8591_7E26B6E83FDA]
+Type: Logical
+Package: Model / Pkg_Fahrradsystem
+Elements:
+- Fahrer/in [8109BCA9_A64D_4b79_98B9_E32DADA3240F]
+- Hinterradbremse [9CE40808_1141_44b2_B404_9EC5032170E3]
+- Vorradbremse [03E4AD70_9C27_486e_A0E0_C5B8467D4FB8]
+- Akku [D0FFC59D_20F4_44d0_8042_ABEB4DF6AF72]
+- Sattel [D6A034C3_2D07_4d79_A807_16097FEB9786]
+- Lenker [CA8E8BD2_780B_4948_9756_DD10D7F9C671]
+- Rahmen [A12C30F7_5BCB_4ed5_B093_F8E8C46A36D5]
+- Felge [3CC59B7F_6CA7_4235_AFA6_5D42A443758C]
+- Reifen [52DBD5E5_CBFD_457e_BFFA_F7000BAE4D88]
+- Laufrad [85E70FA5_FD0C_4254_B66D_D397A8FEF0BC]
+- Ritzel [13254014_94E4_47f9_8ACB_1DC228E29F4D]
+- Hinterrad [322F1ED0_BB19_47f4_BB58_2AE20C2FF636]
+- Pedale [487250BA_0776_43c5_A3F6_370C90D6998B]
+- Kurbel [8C742257_FE66_4135_8522_0671DD718ED4]
+- E-Motor [28A0BEED_CFAE_4d48_BD45_9118B9095222]
+Additional elements omitted.
+Relations:
+- Association [636918F9_3F43_4892_9480_5CBF9818DF51]: Steuerung [FC35C227_F39F_4cd6_B113_E3386DA17579] -> Fahrrad [0ABA6B51_76CD_40d4_8B25_5E902BE0706F]
+- Association [299F78D7_1985_4172_95A0_0F11F7C741A2]: Momentenwandler [EE71FEB8_50AD_4277_BD32_BC74F744F5C4] -> Fahrrad [0ABA6B51_76CD_40d4_8B25_5E902BE0706F]
+- Association [55E9197C_FB0D_4cd4_ACF0_2D64F39140E4]: Mechanik Struktur [3A26B4DA_E67D_44a4_A590_7A68ECF6312C] -> Fahrrad [0ABA6B51_76CD_40d4_8B25_5E902BE0706F]
+- Association [DE0659B3_322B_40c0_A72A_24510C5985B5]: Energieversorgung [6D0AA0FC_D760_4147_AB32_E15B187055E5] -> Fahrrad [0ABA6B51_76CD_40d4_8B25_5E902BE0706F]
+- Association [1FA74257_272C_48b5_B3EB_3A72989DC500]: Bremssystem [3FAC79F9_BBAD_4589_B7DA_AD9EDCCDF274] -> Fahrrad [0ABA6B51_76CD_40d4_8B25_5E902BE0706F]
+- Association [79C7C068_EC3C_4158_9B45_DEAFABC806E2]: Antrieb [37AFD518_251D_4f7b_8101_DB5D5718BFAE] -> Momentenwandler [EE71FEB8_50AD_4277_BD32_BC74F744F5C4]
+- Association [0D89AB27_A5EC_4afc_9D8D_C8FAC5778AAC]: Kette [896D9C03_5B05_4574_B093_56FABFAABE74] -> Momentenwandler [EE71FEB8_50AD_4277_BD32_BC74F744F5C4]
+- Association [2A068EB3_3FC8_4b9d_9F0D_FABB364C47F6]: Abtrieb [9371CED8_0678_412c_90AF_D1B69C8A9BFE] -> Momentenwandler [EE71FEB8_50AD_4277_BD32_BC74F744F5C4]
+- Association [30BB2726_E727_42c1_B6E6_054C5B468D9C]: elektrischer Antrieb [765A432C_BB6B_4619_8B84_599B96635F62] -> Antrieb [37AFD518_251D_4f7b_8101_DB5D5718BFAE]
+- Association [7DBEC385_F590_4ecf_98C0_9871127FA847]: Kettenblatt [C589B7E5_5E7E_4f8e_9E76_E5957021987A] -> Antrieb [37AFD518_251D_4f7b_8101_DB5D5718BFAE]
+- Association [DDE2C82B_E0B0_48f9_9465_ECEBA664E0E5]: mechanischer Antrieb [36CC82F8_4F9E_4eab_9C14_687A97F1F2FE] -> Antrieb [37AFD518_251D_4f7b_8101_DB5D5718BFAE]
+- Association [D45A1E12_DFC0_4e64_BB98_6E8DACCCDBA0]: E-Motor [28A0BEED_CFAE_4d48_BD45_9118B9095222] -> elektrischer Antrieb [765A432C_BB6B_4619_8B84_599B96635F62]
+- Association [392CD59B_CC45_4aa6_B9D4_E628F45C5F56]: Kurbel [8C742257_FE66_4135_8522_0671DD718ED4] -> mechanischer Antrieb [36CC82F8_4F9E_4eab_9C14_687A97F1F2FE]
+- Association [CC833767_686D_4778_91A9_FA684F9C4625]: Pedale [487250BA_0776_43c5_A3F6_370C90D6998B] -> mechanischer Antrieb [36CC82F8_4F9E_4eab_9C14_687A97F1F2FE]
+- Association [7C789D4B_032D_44be_87C4_856459C9F837]: Hinterrad [322F1ED0_BB19_47f4_BB58_2AE20C2FF636] -> Abtrieb [9371CED8_0678_412c_90AF_D1B69C8A9BFE]
+Additional relations omitted.
+====================================================================================================
+rank         : 2
+score        : 1.1400
+raw_score    : 0.9000
+type_weight  : 1.00
+lexical_bonus: 0.2400
+source       : lookup_entity_node
+chunk_id     : node::EAID_28A0BEED_CFAE_4d48_BD45_9118B9095222::0
+chunk_type   : node
+name         : E-Motor
+type         : Block
+source_id    : None
+----------------------------------------------------------------------------------------------------
+[Block] E-Motor [28A0BEED_CFAE_4d48_BD45_9118B9095222]
+Package: Model / Pkg_Fahrradsystem / bdd_Blocks
+Appears in diagrams:
+- Fahrradsystem [AB4214F0_398F_4cc2_8591_7E26B6E83FDA]
+Properties:
+- k_M = 1,22 Nm/A
+Connected relations:
+- Association [D45A1E12_DFC0_4e64_BB98_6E8DACCCDBA0]: E-Motor [28A0BEED_CFAE_4d48_BD45_9118B9095222] -> elektrischer Antrieb [765A432C_BB6B_4619_8B84_599B96635F62]
+====================================================================================================
+rank         : 3
+score        : 0.9900
+raw_score    : 0.8220
+type_weight  : 1.18
+lexical_bonus: 0.0200
+source       : semantic_fallback
+chunk_id     : diagram::EAID_EA12D2DD_B57C_4012_BD4E_01F2C0539B32::0
+chunk_type   : diagram
+name         : Sequence Diagramm
+type         : Logical
+source_id    : None
+----------------------------------------------------------------------------------------------------
+[Diagram] Sequence Diagramm [EA12D2DD_B57C_4012_BD4E_01F2C0539B32]
+Type: Logical
+Package: Model / Pkg_Fahrradsystem / Sequence Diagramm
+Elements:
+- Fahrer/in [8109BCA9_A64D_4b79_98B9_E32DADA3240F]
+- Motor [8DD6AAC1_3414_4a11_B0AC_A8ED70368750]
+- Anzeigen [E38B2C81_5864_42de_BACB_095C4DA2952C]
+- Batterie [9BCF3D2A_BC76_4154_A728_3E8214D5A8DF]
+- E_Antrieb Kontrollesystem [6A185400_A455_4cda_90AD_816E115E19EC]
+- Elektrisches System [16B58248_8877_4d50_84C4_3F34E4293774]
+Relations:
+- Association [24CFE91D_3886_46ee_AAAB_726D294015EF]: E_Antrieb Kontrollesystem [6A185400_A455_4cda_90AD_816E115E19EC] -> Elektrisches System [16B58248_8877_4d50_84C4_3F34E4293774]
+- Association [3C456194_0016_4763_A791_9DD3866CDBDD]: Batterie [9BCF3D2A_BC76_4154_A728_3E8214D5A8DF] -> Elektrisches System [16B58248_8877_4d50_84C4_3F34E4293774]
+- Association [66CD3DFF_E704_43a9_8282_30EA6A486EEB]: Anzeigen [E38B2C81_5864_42de_BACB_095C4DA2952C] -> Elektrisches System [16B58248_8877_4d50_84C4_3F34E4293774]
+- Association [8A142033_3489_4f06_A7C9_71EE0FB7CC87]: Motor [8DD6AAC1_3414_4a11_B0AC_A8ED70368750] -> Elektrisches System [16B58248_8877_4d50_84C4_3F34E4293774]
+- Association [3DB003F1_50B7_422d_80C3_99AE86858AB3]: Fahrer/in [8109BCA9_A64D_4b79_98B9_E32DADA3240F] -> Elektrisches System [16B58248_8877_4d50_84C4_3F34E4293774]
+====================================================================================================
+rank         : 4
+score        : 0.9775
+raw_score    : 0.8546
+type_weight  : 0.98
+lexical_bonus: 0.1400
+source       : semantic_fallback
+chunk_id     : relation::EAID_D45A1E12_DFC0_4e64_BB98_6E8DACCCDBA0::0
+chunk_type   : relation
+name         : None
+type         : Association
+source_id    : EAID_28A0BEED_CFAE_4d48_BD45_9118B9095222
+----------------------------------------------------------------------------------------------------
+[Association] E-Motor [28A0BEED_CFAE_4d48_BD45_9118B9095222] -> elektrischer Antrieb [765A432C_BB6B_4619_8B84_599B96635F62]
+Relation type: uml:Association
+Source element: E-Motor [28A0BEED_CFAE_4d48_BD45_9118B9095222] (Block)
+Target element: elektrischer Antrieb [765A432C_BB6B_4619_8B84_599B96635F62] (Block)
+Package: Model / Pkg_Fahrradsystem / bdd_Blocks
+Appears in diagrams:
+- Fahrradsystem [AB4214F0_398F_4cc2_8591_7E26B6E83FDA]
+Direction: Source -> Destination
+====================================================================================================
+rank         : 5
+score        : 0.9756
+raw_score    : 0.8099
+type_weight  : 1.18
+lexical_bonus: 0.0200
+source       : semantic_fallback
+chunk_id     : diagram::EAID_2B403CEE_0D66_46f3_B944_C85E2C084B83::0
+chunk_type   : diagram
+name         : Signal
+type         : Logical
+source_id    : None
+----------------------------------------------------------------------------------------------------
+[Diagram] Signal [2B403CEE_0D66_46f3_B944_C85E2C084B83]
+Type: Logical
+Package: Model / Pkg_Fahrradsystem / Sequence Diagramm / Signal
+Elements:
+- Zeigen "leere Batterie" [5B32EEC9_3A36_4d26_A438_0AE0DB2D7C13]
+- Anzeige der verbleibenden Batterieleistung [F3FCD5DB_439B_4a0a_AC33_05AFC25DFD91]
+- Motor starten [DAF5916D_BA60_45aa_B50B_DAF87F479267]
+- Rï¿½ckkehr zum Batteriestatus [6F09137A_8B53_4825_9F23_4E8591AC80D5]
+- Batteriestand prï¿½fen [3A928F41_B555_4071_BAA2_08615E334495]
+- Button drucken [FF8A0629_BC56_4b4d_AC31_575313D1740C]
+====================================================================================================
+rank         : 6
+score        : 0.9756
+raw_score    : 0.8356
+type_weight  : 1.00
+lexical_bonus: 0.1400
+source       : semantic_fallback
+chunk_id     : node::EAID_765A432C_BB6B_4619_8B84_599B96635F62::0
+chunk_type   : node
+name         : elektrischer Antrieb
+type         : Block
+source_id    : None
+----------------------------------------------------------------------------------------------------
+[Block] elektrischer Antrieb [765A432C_BB6B_4619_8B84_599B96635F62]
+Package: Model / Pkg_Fahrradsystem / bdd_Blocks
+Appears in diagrams:
+- Fahrradsystem [AB4214F0_398F_4cc2_8591_7E26B6E83FDA]
+Connected relations:
+- Association [30BB2726_E727_42c1_B6E6_054C5B468D9C]: elektrischer Antrieb [765A432C_BB6B_4619_8B84_599B96635F62] -> Antrieb [37AFD518_251D_4f7b_8101_DB5D5718BFAE]
+- Association [D45A1E12_DFC0_4e64_BB98_6E8DACCCDBA0]: E-Motor [28A0BEED_CFAE_4d48_BD45_9118B9095222] -> elektrischer Antrieb [765A432C_BB6B_4619_8B84_599B96635F62]
+====================================================================================================
+rank         : 7
+score        : 0.9718
+raw_score    : 0.8066
+type_weight  : 1.18
+lexical_bonus: 0.0200
+source       : semantic_fallback
+chunk_id     : diagram::EAID_E09777C2_36BC_42e0_8B4E_1C1EFE0AFD4B::0
+chunk_type   : diagram
+name         : beschleunigen
+type         : Activity
+source_id    : None
+----------------------------------------------------------------------------------------------------
+[Diagram] beschleunigen [E09777C2_36BC_42e0_8B4E_1C1EFE0AFD4B]
+Type: Activity
+Package: Model / Pkg_Fahrradsystem / Activity Diagramm
+Elements:
+- Batteriestatus [92499A24_3080_47f8_BB8B_C10E52D2487D]
+- Batterie prï¿½fen [6B496853_59DD_4ee1_8CD2_E09A6C72F6D5]
+- Motor starten [C94AE55E_6281_4050_B597_C2146C7C9093]
+- Stufe einstellen [47DB2F80_0B1B_4158_B6EC_939FFF706AE2]
+- ActivityFinal [24CA0A0E_5BFE_46eb_9AB2_7AE0FFCC583A]
+- pure Kraft antrieben [9C9B71CB_73C5_4669_B5BB_CCB0865C7022]
+- Hybrid antrieben [1EAA6E56_5ACF_4797_9EDD_6C2501BEB966]
+- mit Motor ? [D046E6AA_5E94_40a3_96D1_229B5CC6EE34]
+- ActivityInitial [491AB1A8_3A69_45e1_B608_4F0E968206A2]
+- beschleunigen [F0CF6447_F9BC_482f_A4EA_5D10F79BE40F]
+Relations:
+- ControlFlow [67738189_2ECB_4e51_9849_B65EBA2F25D8]: Batterie prï¿½fen [6B496853_59DD_4ee1_8CD2_E09A6C72F6D5] -> Batteriestatus [92499A24_3080_47f8_BB8B_C10E52D2487D]
+- ControlFlow [0901DC30_F83A_421a_910C_C67EFB372FE3]: Batteriestatus [92499A24_3080_47f8_BB8B_C10E52D2487D] -> Stufe einstellen [47DB2F80_0B1B_4158_B6EC_939FFF706AE2]
+- ControlFlow [46DABEED_A9D7_42f2_9971_BC23B79B578B]: Batteriestatus [92499A24_3080_47f8_BB8B_C10E52D2487D] -> pure Kraft antrieben [9C9B71CB_73C5_4669_B5BB_CCB0865C7022]
+- ControlFlow [EBE0964D_5E0F_4975_AE41_75A494052879]: mit Motor ? [D046E6AA_5E94_40a3_96D1_229B5CC6EE34] -> Hybrid antrieben [1EAA6E56_5ACF_4797_9EDD_6C2501BEB966]
+- ControlFlow [3DA0E4A4_C69B_4b76_9D26_D558A78E27F1]: mit Motor ? [D046E6AA_5E94_40a3_96D1_229B5CC6EE34] -> pure Kraft antrieben [9C9B71CB_73C5_4669_B5BB_CCB0865C7022]
+- ControlFlow [3943A33E_BDB2_4ab0_8924_D4178D5F56A9]: ActivityInitial [491AB1A8_3A69_45e1_B608_4F0E968206A2] -> mit Motor ? [D046E6AA_5E94_40a3_96D1_229B5CC6EE34]
+- ControlFlow [A0840F1B_A048_4fea_88D0_B41B0BDD8EB9]: Hybrid antrieben [1EAA6E56_5ACF_4797_9EDD_6C2501BEB966] -> Batterie prï¿½fen [6B496853_59DD_4ee1_8CD2_E09A6C72F6D5]
+- ControlFlow [6C49FA79_9A92_40c1_A413_FAFF8B1DB864]: pure Kraft antrieben [9C9B71CB_73C5_4669_B5BB_CCB0865C7022] -> ActivityFinal [24CA0A0E_5BFE_46eb_9AB2_7AE0FFCC583A]
+- ControlFlow [970B6A21_C921_4d04_A6FF_B7DB09152143]: Motor starten [C94AE55E_6281_4050_B597_C2146C7C9093] -> ActivityFinal [24CA0A0E_5BFE_46eb_9AB2_7AE0FFCC583A]
+- ControlFlow [7FBD4AD7_621F_4d49_8E6A_910C299F6C55]: Stufe einstellen [47DB2F80_0B1B_4158_B6EC_939FFF706AE2] -> Motor starten [C94AE55E_6281_4050_B597_C2146C7C9093]
+====================================================================================================
+rank         : 8
+score        : 0.9641
+raw_score    : 0.8170
+type_weight  : 1.18
+lexical_bonus: 0.0000
+source       : semantic_fallback
+chunk_id     : diagram::EAID_C55B5AD6_360A_4f89_B5C7_EFE1FDB1F383::0
+chunk_type   : diagram
+name         : State Maschine
+type         : Statechart
+source_id    : None
+----------------------------------------------------------------------------------------------------
+[Diagram] State Maschine [C55B5AD6_360A_4f89_B5C7_EFE1FDB1F383]
+Type: Statechart
+Package: Model / Pkg_Fahrradsystem / State Maschine
+Elements:
+- Maintenance [3BAB341C_DD5F_4b21_A8C8_0C7DC0F5AABA]
+- Riding [66373881_078F_4001_A894_F712E8BB7B3C]
+- Stopped [E1188CDF_44E7_4f5f_B966_CE205FF2B335]
+- Locked [A6478C55_156F_4046_8A2A_33B8D1B29F09]
+Relations:
+- StateFlow [A5EC0F69_555A_4995_8B5E_BC37620C09DA]: Locked [A6478C55_156F_4046_8A2A_33B8D1B29F09] -> Stopped [E1188CDF_44E7_4f5f_B966_CE205FF2B335]
+- StateFlow [9177CEAE_A736_49cb_B2C1_8859D4E8AF46]: Stopped [E1188CDF_44E7_4f5f_B966_CE205FF2B335] -> Locked [A6478C55_156F_4046_8A2A_33B8D1B29F09]
+- StateFlow [636AE4E6_8BDC_4f25_8190_D64BCAFB1352]: Stopped [E1188CDF_44E7_4f5f_B966_CE205FF2B335] -> Riding [66373881_078F_4001_A894_F712E8BB7B3C]
+- StateFlow [587305FC_F635_420e_8E50_CAB2224EFF9B]: Stopped [E1188CDF_44E7_4f5f_B966_CE205FF2B335] -> Maintenance [3BAB341C_DD5F_4b21_A8C8_0C7DC0F5AABA]
+- StateFlow [8E3ED270_A387_42bb_A902_F3A7E9AC699C]: Riding [66373881_078F_4001_A894_F712E8BB7B3C] -> Stopped [E1188CDF_44E7_4f5f_B966_CE205FF2B335]
+- StateFlow [6B91BED9_7029_4fe8_9E93_FD83971BA5D2]: Maintenance [3BAB341C_DD5F_4b21_A8C8_0C7DC0F5AABA] -> Stopped [E1188CDF_44E7_4f5f_B966_CE205FF2B335]
+====================================================================================================
+rank         : 9
+score        : 0.9620
+raw_score    : 0.8153
+type_weight  : 1.18
+lexical_bonus: 0.0000
+source       : semantic_fallback
+chunk_id     : diagram::EAID_0332B8D0_E09B_4f95_BEF5_034EBD8D974D::0
+chunk_type   : diagram
+name         : Fahren
+type         : Sequence
+source_id    : None
+----------------------------------------------------------------------------------------------------
+[Diagram] Fahren [0332B8D0_E09B_4f95_BEF5_034EBD8D974D]
+Type: Sequence
+Package: Model / Pkg_Fahrradsystem / Sequence Diagramm
+Elements:
+- 258EC23F_44E2_4b15_AC87_3DFE6451268E
+- Check Batterie [562EB2A4_620F_4cfa_9CF1_D70590ABF7B5]
+- 5049C02D_A51B_4dc4_98C7_9EF60B4378CC
+- FB170E95_563B_475f_9BCB_7D9F491A69FB
+- 206FE732_45DA_44cb_9EDD_378DC2588820
+- 100B2D07_8B0E_42b5_9813_6E0B54E7ADAF
+- Fahren [64544A5B_D7CF_43be_9C67_7D2140CCEFAD]
+Relations:
+- Sequence [3397AE66_2D42_4a20_BD73_968362180D05]: 258EC23F_44E2_4b15_AC87_3DFE6451268E -> 100B2D07_8B0E_42b5_9813_6E0B54E7ADAF
+- Sequence [E4B46EE7_3980_4339_A866_DFFC5BA92328]: 100B2D07_8B0E_42b5_9813_6E0B54E7ADAF -> 206FE732_45DA_44cb_9EDD_378DC2588820
+- Sequence [26B1B23F_8E76_40bb_87F9_E4A81F33CF71]: 206FE732_45DA_44cb_9EDD_378DC2588820 -> 100B2D07_8B0E_42b5_9813_6E0B54E7ADAF
+- Sequence [1CA4CE49_8A84_43a0_A1CE_BC668C8EB4FD]: 100B2D07_8B0E_42b5_9813_6E0B54E7ADAF -> 5049C02D_A51B_4dc4_98C7_9EF60B4378CC
+- Sequence [5277B282_571C_487f_B1A9_9805A071CA4E]: 100B2D07_8B0E_42b5_9813_6E0B54E7ADAF -> FB170E95_563B_475f_9BCB_7D9F491A69FB
+- Sequence [3BF7571A_8CCF_4187_AE8C_DE2130F7B4D3]: FB170E95_563B_475f_9BCB_7D9F491A69FB -> 258EC23F_44E2_4b15_AC87_3DFE6451268E
+- Sequence [297D4DF5_E1A8_4265_BC40_68CADC74F30A]: 100B2D07_8B0E_42b5_9813_6E0B54E7ADAF -> FB170E95_563B_475f_9BCB_7D9F491A69FB
+- Sequence [553C1EC2_49E6_4cdd_B241_17BEE7A71ED1]: FB170E95_563B_475f_9BCB_7D9F491A69FB -> 258EC23F_44E2_4b15_AC87_3DFE6451268E
+====================================================================================================
+rank         : 10
+score        : 0.9553
+raw_score    : 0.8095
+type_weight  : 1.18
+lexical_bonus: 0.0000
+source       : semantic_fallback
+chunk_id     : diagram::EAID_D618B5FA_97BF_4dff_B557_C7793D89DE28::0
+chunk_type   : diagram
+name         : Value Types
+type         : Logical
+source_id    : None
+----------------------------------------------------------------------------------------------------
+[Diagram] Value Types [D618B5FA_97BF_4dff_B557_C7793D89DE28]
+Type: Logical
+Package: Model / Value Types
+Elements:
+- Nm/A [DE81F55F_1CE9_4bac_A9D3_F18F935BBE94]
+- Drehmomentkonstante [C9E4CF4D_CABB_46ec_A7D5_212C23E9995E]
+- A [BD9EC315_FDA4_4d54_9E1C_CDBA48F26A78]
+- Strom [088834F4_9FF8_45a4_AAD5_B1CEEF11411C]
+- m [4B34EC4E_21CB_4746_8DA5_0E67CE01D3D4]
+- Length [78509A15_55C5_486d_93AF_42B5834A4F27]
+- kg [0FDE07EE_2AB6_411a_B37A_88BFDC34478C]
+- Masse [E8EAE05A_C9F3_4f1d_84FD_062D4D672216]
+- Real [97C91C8D_5B26_4db2_8A0A_7F09812A3227]
+Relations:
+- Generalization [425B224A_5916_4677_B7D6_61C589B23461]: Masse [E8EAE05A_C9F3_4f1d_84FD_062D4D672216] -> Real [97C91C8D_5B26_4db2_8A0A_7F09812A3227]
+- Generalization [F352CF01_8BB2_47c3_AF06_4A2E9C754D8D]: Length [78509A15_55C5_486d_93AF_42B5834A4F27] -> Real [97C91C8D_5B26_4db2_8A0A_7F09812A3227]
+- Generalization [EFE82CAD_19AA_49aa_B5B5_07765340B94D]: Strom [088834F4_9FF8_45a4_AAD5_B1CEEF11411C] -> Real [97C91C8D_5B26_4db2_8A0A_7F09812A3227]
+- Generalization [37F7A86F_57CB_49b7_BC61_6C0F12182A5E]: Drehmomentkonstante [C9E4CF4D_CABB_46ec_A7D5_212C23E9995E] -> Real [97C91C8D_5B26_4db2_8A0A_7F09812A3227]
+
+========================================================================================================================
+QUERY #3
+========================================================================================================================
+Zu welchem System gehört die Energieversorgung
+STATUS: NO_EXPECTATION
+
+Detected intent    : find_parent_or_owner
+Target entity      : Energieversorgung
+Asked slot         : None
+Expected answer    : relation_target
+Reasoning mode     : relation_traversal
+Query tokens       : ['energieversorgung']
+Rewritten queries  : ['Energieversorgung', 'Energieversorgung source target relation', 'Energieversorgung connected target']
+Retrieval plan:
+  1. lookup_relation_by_source - 先找以目标实体为 source 的 relation
+  2. lookup_entity_node - 补充节点证据
+  3. semantic_fallback - 若失败则语义兜底
+
+====================================================================================================
+Final Answer:
+Energieversorgung 的直接输出关系目标是：Fahrrad [0ABA6B51_76CD_40d4_8B25_5E902BE0706F] (Block)
+====================================================================================================
+====================================================================================================
+rank         : 1
+score        : 1.3200
+raw_score    : 0.8800
+type_weight  : 1.18
+lexical_bonus: 0.2800
+source       : lookup_relation_by_source
+chunk_id     : relation::EAID_DE0659B3_322B_40c0_A72A_24510C5985B5::0
+chunk_type   : relation
+name         : None
+type         : Association
+source_id    : EAID_6D0AA0FC_D760_4147_AB32_E15B187055E5
+----------------------------------------------------------------------------------------------------
+[Association] Energieversorgung [6D0AA0FC_D760_4147_AB32_E15B187055E5] -> Fahrrad [0ABA6B51_76CD_40d4_8B25_5E902BE0706F]
+Relation type: uml:Association
+Source element: Energieversorgung [6D0AA0FC_D760_4147_AB32_E15B187055E5] (Block)
+Target element: Fahrrad [0ABA6B51_76CD_40d4_8B25_5E902BE0706F] (Block)
+Package: Model / Pkg_Fahrradsystem / bdd_Blocks
+Appears in diagrams:
+- Fahrradsystem [AB4214F0_398F_4cc2_8591_7E26B6E83FDA]
+Direction: Source -> Destination
+====================================================================================================
+rank         : 2
+score        : 1.1690
+raw_score    : 0.8212
+type_weight  : 1.18
+lexical_bonus: 0.2000
+source       : semantic_fallback
+chunk_id     : relation::EAID_919AA456_5F73_4de5_86BA_C4770172D25F::0
+chunk_type   : relation
+name         : None
+type         : Association
+source_id    : EAID_D0FFC59D_20F4_44d0_8042_ABEB4DF6AF72
+----------------------------------------------------------------------------------------------------
+[Association] Akku [D0FFC59D_20F4_44d0_8042_ABEB4DF6AF72] -> Energieversorgung [6D0AA0FC_D760_4147_AB32_E15B187055E5]
+Relation type: uml:Association
+Source element: Akku [D0FFC59D_20F4_44d0_8042_ABEB4DF6AF72] (Block)
+Target element: Energieversorgung [6D0AA0FC_D760_4147_AB32_E15B187055E5] (Block)
+Package: Model / Pkg_Fahrradsystem / bdd_Blocks
+Appears in diagrams:
+- Fahrradsystem [AB4214F0_398F_4cc2_8591_7E26B6E83FDA]
+Direction: Source -> Destination
+====================================================================================================
+rank         : 3
+score        : 1.0353
+raw_score    : 0.8353
+type_weight  : 1.00
+lexical_bonus: 0.2000
+source       : semantic_fallback
+chunk_id     : node::EAID_6D0AA0FC_D760_4147_AB32_E15B187055E5::0
+chunk_type   : node
+name         : Energieversorgung
+type         : Block
+source_id    : None
+----------------------------------------------------------------------------------------------------
+[Block] Energieversorgung [6D0AA0FC_D760_4147_AB32_E15B187055E5]
+Package: Model / Pkg_Fahrradsystem / bdd_Blocks
+Appears in diagrams:
+- Fahrradsystem [AB4214F0_398F_4cc2_8591_7E26B6E83FDA]
+Connected relations:
+- Association [919AA456_5F73_4de5_86BA_C4770172D25F]: Akku [D0FFC59D_20F4_44d0_8042_ABEB4DF6AF72] -> Energieversorgung [6D0AA0FC_D760_4147_AB32_E15B187055E5]
+- Association [DE0659B3_322B_40c0_A72A_24510C5985B5]: Energieversorgung [6D0AA0FC_D760_4147_AB32_E15B187055E5] -> Fahrrad [0ABA6B51_76CD_40d4_8B25_5E902BE0706F]
+====================================================================================================
+rank         : 4
+score        : 0.9568
+raw_score    : 0.8109
+type_weight  : 1.18
+lexical_bonus: 0.0000
+source       : semantic_fallback
+chunk_id     : relation::EAID_3DA0E4A4_C69B_4b76_9D26_D558A78E27F1::0
+chunk_type   : relation
+name         : None
+type         : ControlFlow
+source_id    : EAID_D046E6AA_5E94_40a3_96D1_229B5CC6EE34
+----------------------------------------------------------------------------------------------------
+[ControlFlow] mit Motor ? [D046E6AA_5E94_40a3_96D1_229B5CC6EE34] -> pure Kraft antrieben [9C9B71CB_73C5_4669_B5BB_CCB0865C7022]
+Relation type: ControlFlow
+Source element: mit Motor ? [D046E6AA_5E94_40a3_96D1_229B5CC6EE34] (DecisionNode)
+Target element: pure Kraft antrieben [9C9B71CB_73C5_4669_B5BB_CCB0865C7022] (Action)
+Appears in diagrams:
+- beschleunigen [E09777C2_36BC_42e0_8B4E_1C1EFE0AFD4B]
+Direction: Source -> Destination
+====================================================================================================
+rank         : 5
+score        : 0.9566
+raw_score    : 0.8107
+type_weight  : 1.18
+lexical_bonus: 0.0000
+source       : semantic_fallback
+chunk_id     : relation::EAID_2690D320_520E_456f_8270_47F3DE39A1D7::0
+chunk_type   : relation
+name         : None
+type         : extend
+source_id    : EAID_14F2FA4F_7AB5_41ff_8C21_23F4CC79F9F7
+----------------------------------------------------------------------------------------------------
+[extend] E-System starten [14F2FA4F_7AB5_41ff_8C21_23F4CC79F9F7] -> Fahrrad fahren [A1E97E6F_64B7_4436_8690_2F7FB974EC58]
+Relation type: UseCase
+Source element: E-System starten [14F2FA4F_7AB5_41ff_8C21_23F4CC79F9F7] (UseCase)
+Target element: Fahrrad fahren [A1E97E6F_64B7_4436_8690_2F7FB974EC58] (UseCase)
+Appears in diagrams:
+- Fahrrad fahren [055BD428_E02D_4bd3_9214_CEB96D675ACF]
+Direction: Source -> Destination
+====================================================================================================
+rank         : 6
+score        : 0.9558
+raw_score    : 0.8100
+type_weight  : 1.18
+lexical_bonus: 0.0000
+source       : semantic_fallback
+chunk_id     : relation::EAID_3943A33E_BDB2_4ab0_8924_D4178D5F56A9::0
+chunk_type   : relation
+name         : None
+type         : ControlFlow
+source_id    : EAID_491AB1A8_3A69_45e1_B608_4F0E968206A2
+----------------------------------------------------------------------------------------------------
+[ControlFlow] ActivityInitial [491AB1A8_3A69_45e1_B608_4F0E968206A2] -> mit Motor ? [D046E6AA_5E94_40a3_96D1_229B5CC6EE34]
+Relation type: ControlFlow
+Source element: ActivityInitial [491AB1A8_3A69_45e1_B608_4F0E968206A2] (State)
+Target element: mit Motor ? [D046E6AA_5E94_40a3_96D1_229B5CC6EE34] (DecisionNode)
+Appears in diagrams:
+- beschleunigen [E09777C2_36BC_42e0_8B4E_1C1EFE0AFD4B]
+Direction: Source -> Destination
+====================================================================================================
+rank         : 7
+score        : 0.9547
+raw_score    : 0.8091
+type_weight  : 1.18
+lexical_bonus: 0.0000
+source       : semantic_fallback
+chunk_id     : relation::EAID_67738189_2ECB_4e51_9849_B65EBA2F25D8::0
+chunk_type   : relation
+name         : None
+type         : ControlFlow
+source_id    : EAID_6B496853_59DD_4ee1_8CD2_E09A6C72F6D5
+----------------------------------------------------------------------------------------------------
+[ControlFlow] Batterie prï¿½fen [6B496853_59DD_4ee1_8CD2_E09A6C72F6D5] -> Batteriestatus [92499A24_3080_47f8_BB8B_C10E52D2487D]
+Relation type: ControlFlow
+Source element: Batterie prï¿½fen [6B496853_59DD_4ee1_8CD2_E09A6C72F6D5] (Action)
+Target element: Batteriestatus [92499A24_3080_47f8_BB8B_C10E52D2487D] (DecisionNode)
+Appears in diagrams:
+- beschleunigen [E09777C2_36BC_42e0_8B4E_1C1EFE0AFD4B]
+Direction: Source -> Destination
+====================================================================================================
+rank         : 8
+score        : 0.9546
+raw_score    : 0.8090
+type_weight  : 1.18
+lexical_bonus: 0.0000
+source       : semantic_fallback
+chunk_id     : relation::EAID_46DABEED_A9D7_42f2_9971_BC23B79B578B::0
+chunk_type   : relation
+name         : None
+type         : ControlFlow
+source_id    : EAID_92499A24_3080_47f8_BB8B_C10E52D2487D
+----------------------------------------------------------------------------------------------------
+[ControlFlow] Batteriestatus [92499A24_3080_47f8_BB8B_C10E52D2487D] -> pure Kraft antrieben [9C9B71CB_73C5_4669_B5BB_CCB0865C7022]
+Relation type: ControlFlow
+Source element: Batteriestatus [92499A24_3080_47f8_BB8B_C10E52D2487D] (DecisionNode)
+Target element: pure Kraft antrieben [9C9B71CB_73C5_4669_B5BB_CCB0865C7022] (Action)
+Appears in diagrams:
+- beschleunigen [E09777C2_36BC_42e0_8B4E_1C1EFE0AFD4B]
+Direction: Source -> Destination
+====================================================================================================
+rank         : 9
+score        : 0.9528
+raw_score    : 0.8074
+type_weight  : 1.18
+lexical_bonus: 0.0000
+source       : semantic_fallback
+chunk_id     : relation::EAID_7F1CD33E_3072_4e89_8929_CF4914F301D6::0
+chunk_type   : relation
+name         : None
+type         : include
+source_id    : EAID_9FF37A48_8FBB_4dc2_BBF2_071D4E759FE5
+----------------------------------------------------------------------------------------------------
+[include] Abstellen [9FF37A48_8FBB_4dc2_BBF2_071D4E759FE5] -> Bremsen [9320FFDD_50F3_4ec5_92C8_13994ED3FC6F]
+Relation type: UseCase
+Source element: Abstellen [9FF37A48_8FBB_4dc2_BBF2_071D4E759FE5] (UseCase)
+Target element: Bremsen [9320FFDD_50F3_4ec5_92C8_13994ED3FC6F] (UseCase)
+Appears in diagrams:
+- Fahrrad fahren [055BD428_E02D_4bd3_9214_CEB96D675ACF]
+Direction: Source -> Destination
+====================================================================================================
+rank         : 10
+score        : 0.9511
+raw_score    : 0.8061
+type_weight  : 1.18
+lexical_bonus: 0.0000
+source       : semantic_fallback
+chunk_id     : relation::EAID_D45A1E12_DFC0_4e64_BB98_6E8DACCCDBA0::0
+chunk_type   : relation
+name         : None
+type         : Association
+source_id    : EAID_28A0BEED_CFAE_4d48_BD45_9118B9095222
+----------------------------------------------------------------------------------------------------
+[Association] E-Motor [28A0BEED_CFAE_4d48_BD45_9118B9095222] -> elektrischer Antrieb [765A432C_BB6B_4619_8B84_599B96635F62]
+Relation type: uml:Association
+Source element: E-Motor [28A0BEED_CFAE_4d48_BD45_9118B9095222] (Block)
+Target element: elektrischer Antrieb [765A432C_BB6B_4619_8B84_599B96635F62] (Block)
+Package: Model / Pkg_Fahrradsystem / bdd_Blocks
+Appears in diagrams:
+- Fahrradsystem [AB4214F0_398F_4cc2_8591_7E26B6E83FDA]
+Direction: Source -> Destination
+
+========================================================================================================================
+QUERY #4
+========================================================================================================================
+Welche Elemente enthält das bdd_Blocks Package
+STATUS: NO_EXPECTATION
+
+Detected intent    : list_members
+Target entity      : bdd_Blocks
+Asked slot         : None
+Expected answer    : entity_list
+Reasoning mode     : direct_field_lookup
+Query tokens       : ['bdd', 'blocks']
+Rewritten queries  : ['bdd_Blocks', 'bdd_Blocks package elements', 'bdd_Blocks contains elements']
+Retrieval plan:
+  1. lookup_package_chunk - 先定位 package chunk
+  2. extract_members_from_package - 从 package 中抽 Elements / Child packages
+  3. expand_members_from_nodes - 若 package 被截断，则按 node.package 全量补全
+  4. semantic_fallback - 若失败则语义兜底
+
+====================================================================================================
+Final Answer:
+bdd_Blocks package 中包含以下元素：
+- Abtrieb [9371CED8_0678_412c_90AF_D1B69C8A9BFE]
+- Akku [D0FFC59D_20F4_44d0_8042_ABEB4DF6AF72]
+- Antrieb [37AFD518_251D_4f7b_8101_DB5D5718BFAE]
+- Bremssystem [3FAC79F9_BBAD_4589_B7DA_AD9EDCCDF274]
+- E-Motor [28A0BEED_CFAE_4d48_BD45_9118B9095222]
+- elektrischer Antrieb [765A432C_BB6B_4619_8B84_599B96635F62]
+- Energieversorgung [6D0AA0FC_D760_4147_AB32_E15B187055E5]
+- Fahrrad [0ABA6B51_76CD_40d4_8B25_5E902BE0706F]
+- Felge [3CC59B7F_6CA7_4235_AFA6_5D42A443758C]
+- Hinterrad [322F1ED0_BB19_47f4_BB58_2AE20C2FF636]
+- Hinterradbremse [9CE40808_1141_44b2_B404_9EC5032170E3]
+- Kette [896D9C03_5B05_4574_B093_56FABFAABE74]
+- Kettenblatt [C589B7E5_5E7E_4f8e_9E76_E5957021987A]
+- Kurbel [8C742257_FE66_4135_8522_0671DD718ED4]
+- Laufrad [85E70FA5_FD0C_4254_B66D_D397A8FEF0BC]
+- Lenker [CA8E8BD2_780B_4948_9756_DD10D7F9C671]
+- Mechanik Struktur [3A26B4DA_E67D_44a4_A590_7A68ECF6312C]
+- mechanischer Antrieb [36CC82F8_4F9E_4eab_9C14_687A97F1F2FE]
+- Momentenwandler [EE71FEB8_50AD_4277_BD32_BC74F744F5C4]
+- Pedale [487250BA_0776_43c5_A3F6_370C90D6998B]
+- Rahmen [A12C30F7_5BCB_4ed5_B093_F8E8C46A36D5]
+- Reifen [52DBD5E5_CBFD_457e_BFFA_F7000BAE4D88]
+- Ritzel [13254014_94E4_47f9_8ACB_1DC228E29F4D]
+- Sattel [D6A034C3_2D07_4d79_A807_16097FEB9786]
+- Steuerung [FC35C227_F39F_4cd6_B113_E3386DA17579]
+- Vorradbremse [03E4AD70_9C27_486e_A0E0_C5B8467D4FB8]
+====================================================================================================
+====================================================================================================
+rank         : 1
+score        : 1.4000
+raw_score    : 0.9000
+type_weight  : 1.20
+lexical_bonus: 0.3200
+source       : lookup_package_chunk
+chunk_id     : package::EAPK_46ABB398_367D_48a8_AE3D_AA9C8B161DF8::0
+chunk_type   : package
+name         : bdd_Blocks
+type         : Package
+source_id    : None
+----------------------------------------------------------------------------------------------------
+[Package] bdd_Blocks [46ABB398_367D_48a8_AE3D_AA9C8B161DF8]
+Path: Model / Pkg_Fahrradsystem / bdd_Blocks
+Elements:
+- Abtrieb [9371CED8_0678_412c_90AF_D1B69C8A9BFE]
+- Akku [D0FFC59D_20F4_44d0_8042_ABEB4DF6AF72]
+- Antrieb [37AFD518_251D_4f7b_8101_DB5D5718BFAE]
+- Bremssystem [3FAC79F9_BBAD_4589_B7DA_AD9EDCCDF274]
+- E-Motor [28A0BEED_CFAE_4d48_BD45_9118B9095222]
+- elektrischer Antrieb [765A432C_BB6B_4619_8B84_599B96635F62]
+- Energieversorgung [6D0AA0FC_D760_4147_AB32_E15B187055E5]
+- Fahrrad [0ABA6B51_76CD_40d4_8B25_5E902BE0706F]
+- Felge [3CC59B7F_6CA7_4235_AFA6_5D42A443758C]
+- Hinterrad [322F1ED0_BB19_47f4_BB58_2AE20C2FF636]
+- Hinterradbremse [9CE40808_1141_44b2_B404_9EC5032170E3]
+- Kette [896D9C03_5B05_4574_B093_56FABFAABE74]
+- Kettenblatt [C589B7E5_5E7E_4f8e_9E76_E5957021987A]
+- Kurbel [8C742257_FE66_4135_8522_0671DD718ED4]
+- Laufrad [85E70FA5_FD0C_4254_B66D_D397A8FEF0BC]
+Additional elements omitted.
+====================================================================================================
+rank         : 2
+score        : 1.3344
+raw_score    : 0.8453
+type_weight  : 1.20
+lexical_bonus: 0.3200
+source       : semantic_fallback
+chunk_id     : package::EAPK_9D992AFA_AD43_4989_BB2C_1E02ADBABBBF::0
+chunk_type   : package
+name         : Pkg_Fahrradsystem
+type         : Package
+source_id    : None
+----------------------------------------------------------------------------------------------------
+[Package] Pkg_Fahrradsystem [9D992AFA_AD43_4989_BB2C_1E02ADBABBBF]
+Path: Model / Pkg_Fahrradsystem
+Child packages:
+- bdd_Blocks [46ABB398_367D_48a8_AE3D_AA9C8B161DF8]
+- Use_Case_Diagramm [D48C8892_7816_4d65_98BF_C8C5A8601B35]
+- Activity Diagramm [8B18672C_7CD0_4383_904A_48380F2E9A22]
+- State Maschine [C30845A4_A8B9_48bb_BDA9_E5F7DE109281]
+- Sequence Diagramm [3D58D932_E46B_4f66_B381_A6BF3BFB2AAF]
+Elements:
+- Fahrer/in [8109BCA9_A64D_4b79_98B9_E32DADA3240F]
+Diagrams:
+- Fahrradsystem [AB4214F0_398F_4cc2_8591_7E26B6E83FDA]
+- Fahrer/in [DDBBFF1A_5003_4b77_BB42_BE9D623FFF6F]
+====================================================================================================
+rank         : 3
+score        : 1.0114
+raw_score    : 0.8688
+type_weight  : 0.98
+lexical_bonus: 0.1600
+source       : semantic_fallback
+chunk_id     : node::EAID_487250BA_0776_43c5_A3F6_370C90D6998B::0
+chunk_type   : node
+name         : Pedale
+type         : Block
+source_id    : None
+----------------------------------------------------------------------------------------------------
+[Block] Pedale [487250BA_0776_43c5_A3F6_370C90D6998B]
+Package: Model / Pkg_Fahrradsystem / bdd_Blocks
+Appears in diagrams:
+- Fahrradsystem [AB4214F0_398F_4cc2_8591_7E26B6E83FDA]
+Connected relations:
+- Association [CC833767_686D_4778_91A9_FA684F9C4625]: Pedale [487250BA_0776_43c5_A3F6_370C90D6998B] -> mechanischer Antrieb [36CC82F8_4F9E_4eab_9C14_687A97F1F2FE]
+====================================================================================================
+rank         : 4
+score        : 1.0105
+raw_score    : 0.8679
+type_weight  : 0.98
+lexical_bonus: 0.1600
+source       : semantic_fallback
+chunk_id     : node::EAID_A12C30F7_5BCB_4ed5_B093_F8E8C46A36D5::0
+chunk_type   : node
+name         : Rahmen
+type         : Block
+source_id    : None
+----------------------------------------------------------------------------------------------------
+[Block] Rahmen [A12C30F7_5BCB_4ed5_B093_F8E8C46A36D5]
+Package: Model / Pkg_Fahrradsystem / bdd_Blocks
+Appears in diagrams:
+- Fahrradsystem [AB4214F0_398F_4cc2_8591_7E26B6E83FDA]
+Connected relations:
+- Association [3ECFBB00_3327_43a0_9A11_D326F900957D]: Rahmen [A12C30F7_5BCB_4ed5_B093_F8E8C46A36D5] -> Mechanik Struktur [3A26B4DA_E67D_44a4_A590_7A68ECF6312C]
+====================================================================================================
+rank         : 5
+score        : 1.0103
+raw_score    : 0.8676
+type_weight  : 0.98
+lexical_bonus: 0.1600
+source       : semantic_fallback
+chunk_id     : node::EAID_CA8E8BD2_780B_4948_9756_DD10D7F9C671::0
+chunk_type   : node
+name         : Lenker
+type         : Block
+source_id    : None
+----------------------------------------------------------------------------------------------------
+[Block] Lenker [CA8E8BD2_780B_4948_9756_DD10D7F9C671]
+Package: Model / Pkg_Fahrradsystem / bdd_Blocks
+Appears in diagrams:
+- Fahrradsystem [AB4214F0_398F_4cc2_8591_7E26B6E83FDA]
+Connected relations:
+- Association [48266C58_5561_4500_AEE6_4CFE63C62DCF]: Lenker [CA8E8BD2_780B_4948_9756_DD10D7F9C671] -> Mechanik Struktur [3A26B4DA_E67D_44a4_A590_7A68ECF6312C]
+====================================================================================================
+rank         : 6
+score        : 1.0093
+raw_score    : 0.8666
+type_weight  : 0.98
+lexical_bonus: 0.1600
+source       : semantic_fallback
+chunk_id     : node::EAID_FC35C227_F39F_4cd6_B113_E3386DA17579::0
+chunk_type   : node
+name         : Steuerung
+type         : Block
+source_id    : None
+----------------------------------------------------------------------------------------------------
+[Block] Steuerung [FC35C227_F39F_4cd6_B113_E3386DA17579]
+Package: Model / Pkg_Fahrradsystem / bdd_Blocks
+Appears in diagrams:
+- Fahrradsystem [AB4214F0_398F_4cc2_8591_7E26B6E83FDA]
+Connected relations:
+- Association [636918F9_3F43_4892_9480_5CBF9818DF51]: Steuerung [FC35C227_F39F_4cd6_B113_E3386DA17579] -> Fahrrad [0ABA6B51_76CD_40d4_8B25_5E902BE0706F]
+====================================================================================================
+rank         : 7
+score        : 1.0091
+raw_score    : 0.8664
+type_weight  : 0.98
+lexical_bonus: 0.1600
+source       : semantic_fallback
+chunk_id     : node::EAID_D6A034C3_2D07_4d79_A807_16097FEB9786::0
+chunk_type   : node
+name         : Sattel
+type         : Block
+source_id    : None
+----------------------------------------------------------------------------------------------------
+[Block] Sattel [D6A034C3_2D07_4d79_A807_16097FEB9786]
+Package: Model / Pkg_Fahrradsystem / bdd_Blocks
+Appears in diagrams:
+- Fahrradsystem [AB4214F0_398F_4cc2_8591_7E26B6E83FDA]
+Connected relations:
+- Association [7F1D8569_7C01_4c29_A960_4D9B9D6BFBF8]: Sattel [D6A034C3_2D07_4d79_A807_16097FEB9786] -> Mechanik Struktur [3A26B4DA_E67D_44a4_A590_7A68ECF6312C]
+====================================================================================================
+rank         : 8
+score        : 1.0047
+raw_score    : 0.8619
+type_weight  : 0.98
+lexical_bonus: 0.1600
+source       : semantic_fallback
+chunk_id     : node::EAID_C589B7E5_5E7E_4f8e_9E76_E5957021987A::0
+chunk_type   : node
+name         : Kettenblatt
+type         : Block
+source_id    : None
+----------------------------------------------------------------------------------------------------
+[Block] Kettenblatt [C589B7E5_5E7E_4f8e_9E76_E5957021987A]
+Package: Model / Pkg_Fahrradsystem / bdd_Blocks
+Appears in diagrams:
+- Fahrradsystem [AB4214F0_398F_4cc2_8591_7E26B6E83FDA]
+Properties:
+- h_hinten = 28 Real
+Connected relations:
+- Association [7DBEC385_F590_4ecf_98C0_9871127FA847]: Kettenblatt [C589B7E5_5E7E_4f8e_9E76_E5957021987A] -> Antrieb [37AFD518_251D_4f7b_8101_DB5D5718BFAE]
+====================================================================================================
+rank         : 9
+score        : 1.0040
+raw_score    : 0.8612
+type_weight  : 0.98
+lexical_bonus: 0.1600
+source       : semantic_fallback
+chunk_id     : node::EAID_896D9C03_5B05_4574_B093_56FABFAABE74::0
+chunk_type   : node
+name         : Kette
+type         : Block
+source_id    : None
+----------------------------------------------------------------------------------------------------
+[Block] Kette [896D9C03_5B05_4574_B093_56FABFAABE74]
+Package: Model / Pkg_Fahrradsystem / bdd_Blocks
+Appears in diagrams:
+- Fahrradsystem [AB4214F0_398F_4cc2_8591_7E26B6E83FDA]
+Connected relations:
+- Association [0D89AB27_A5EC_4afc_9D8D_C8FAC5778AAC]: Kette [896D9C03_5B05_4574_B093_56FABFAABE74] -> Momentenwandler [EE71FEB8_50AD_4277_BD32_BC74F744F5C4]
+====================================================================================================
+rank         : 10
+score        : 1.0023
+raw_score    : 0.8595
+type_weight  : 0.98
+lexical_bonus: 0.1600
+source       : semantic_fallback
+chunk_id     : node::EAID_52DBD5E5_CBFD_457e_BFFA_F7000BAE4D88::0
+chunk_type   : node
+name         : Reifen
+type         : Block
+source_id    : None
+----------------------------------------------------------------------------------------------------
+[Block] Reifen [52DBD5E5_CBFD_457e_BFFA_F7000BAE4D88]
+Package: Model / Pkg_Fahrradsystem / bdd_Blocks
+Appears in diagrams:
+- Fahrradsystem [AB4214F0_398F_4cc2_8591_7E26B6E83FDA]
+Properties:
+- h_Reifen = 0,04 m
+Connected relations:
+- Association [FAC503E0_8CFA_4fbb_8B1B_12237613FFDE]: Reifen [52DBD5E5_CBFD_457e_BFFA_F7000BAE4D88] -> Hinterrad [322F1ED0_BB19_47f4_BB58_2AE20C2FF636]
+
+========================================================================================================================
+QUERY #5
+========================================================================================================================
+Was ist der Strom des Akku
+STATUS: NO_EXPECTATION
+
+Detected intent    : ask_property_value
+Target entity      : Akku
+Asked slot         : strom
+Expected answer    : property_value
+Reasoning mode     : direct_field_lookup
+Query tokens       : ['strom', 'akku']
+Rewritten queries  : ['Akku', 'Akku strom', 'Akku properties']
+Retrieval plan:
+  1. lookup_entity_node - 先定位目标元素节点
+  2. extract_properties - 从节点中抽取 Properties / Attributes
+  3. semantic_fallback - 若失败则语义兜底
+
+====================================================================================================
+Final Answer:
+Akku 的 strom：I_Max = 15 A
+====================================================================================================
+====================================================================================================
+rank         : 1
+score        : 1.1800
+raw_score    : 0.9000
+type_weight  : 1.00
+lexical_bonus: 0.2800
+source       : lookup_entity_node
+chunk_id     : node::EAID_D0FFC59D_20F4_44d0_8042_ABEB4DF6AF72::0
+chunk_type   : node
+name         : Akku
+type         : Block
+source_id    : None
+----------------------------------------------------------------------------------------------------
+[Block] Akku [D0FFC59D_20F4_44d0_8042_ABEB4DF6AF72]
+Package: Model / Pkg_Fahrradsystem / bdd_Blocks
+Appears in diagrams:
+- Fahrradsystem [AB4214F0_398F_4cc2_8591_7E26B6E83FDA]
+Properties:
+- I_Max = 15 A
+Connected relations:
+- Association [919AA456_5F73_4de5_86BA_C4770172D25F]: Akku [D0FFC59D_20F4_44d0_8042_ABEB4DF6AF72] -> Energieversorgung [6D0AA0FC_D760_4147_AB32_E15B187055E5]
+====================================================================================================
+rank         : 2
+score        : 1.1254
+raw_score    : 0.8351
+type_weight  : 1.18
+lexical_bonus: 0.1400
+source       : semantic_fallback
+chunk_id     : node::EAID_6D0AA0FC_D760_4147_AB32_E15B187055E5::0
+chunk_type   : node
+name         : Energieversorgung
+type         : Block
+source_id    : None
+----------------------------------------------------------------------------------------------------
+[Block] Energieversorgung [6D0AA0FC_D760_4147_AB32_E15B187055E5]
+Package: Model / Pkg_Fahrradsystem / bdd_Blocks
+Appears in diagrams:
+- Fahrradsystem [AB4214F0_398F_4cc2_8591_7E26B6E83FDA]
+Connected relations:
+- Association [919AA456_5F73_4de5_86BA_C4770172D25F]: Akku [D0FFC59D_20F4_44d0_8042_ABEB4DF6AF72] -> Energieversorgung [6D0AA0FC_D760_4147_AB32_E15B187055E5]
+- Association [DE0659B3_322B_40c0_A72A_24510C5985B5]: Energieversorgung [6D0AA0FC_D760_4147_AB32_E15B187055E5] -> Fahrrad [0ABA6B51_76CD_40d4_8B25_5E902BE0706F]
+====================================================================================================
+rank         : 3
+score        : 0.9739
+raw_score    : 0.8509
+type_weight  : 0.98
+lexical_bonus: 0.1400
+source       : semantic_fallback
+chunk_id     : relation::EAID_919AA456_5F73_4de5_86BA_C4770172D25F::0
+chunk_type   : relation
+name         : None
+type         : Association
+source_id    : EAID_D0FFC59D_20F4_44d0_8042_ABEB4DF6AF72
+----------------------------------------------------------------------------------------------------
+[Association] Akku [D0FFC59D_20F4_44d0_8042_ABEB4DF6AF72] -> Energieversorgung [6D0AA0FC_D760_4147_AB32_E15B187055E5]
+Relation type: uml:Association
+Source element: Akku [D0FFC59D_20F4_44d0_8042_ABEB4DF6AF72] (Block)
+Target element: Energieversorgung [6D0AA0FC_D760_4147_AB32_E15B187055E5] (Block)
+Package: Model / Pkg_Fahrradsystem / bdd_Blocks
+Appears in diagrams:
+- Fahrradsystem [AB4214F0_398F_4cc2_8591_7E26B6E83FDA]
+Direction: Source -> Destination
+====================================================================================================
+rank         : 4
+score        : 0.9652
+raw_score    : 0.8179
+type_weight  : 1.18
+lexical_bonus: 0.0000
+source       : semantic_fallback
+chunk_id     : node::EAID_8109BCA9_A64D_4b79_98B9_E32DADA3240F::0
+chunk_type   : node
+name         : Fahrer/in
+type         : Actor
+source_id    : None
+----------------------------------------------------------------------------------------------------
+[Actor] Fahrer/in [8109BCA9_A64D_4b79_98B9_E32DADA3240F]
+Package: Model / Pkg_Fahrradsystem
+Appears in diagrams:
+- Fahrradsystem [AB4214F0_398F_4cc2_8591_7E26B6E83FDA]
+- Fahrer/in [DDBBFF1A_5003_4b77_BB42_BE9D623FFF6F]
+- Sequence Diagramm [EA12D2DD_B57C_4012_BD4E_01F2C0539B32]
+Properties:
+- m_M = 75 kg
+Connected relations:
+- Association [3DB003F1_50B7_422d_80C3_99AE86858AB3]: Fahrer/in [8109BCA9_A64D_4b79_98B9_E32DADA3240F] -> Elektrisches System [16B58248_8877_4d50_84C4_3F34E4293774]
+====================================================================================================
+rank         : 5
+score        : 0.9644
+raw_score    : 0.8173
+type_weight  : 1.18
+lexical_bonus: 0.0000
+source       : semantic_fallback
+chunk_id     : node::EAID_9BCF3D2A_BC76_4154_A728_3E8214D5A8DF::0
+chunk_type   : node
+name         : Batterie
+type         : Block
+source_id    : None
+----------------------------------------------------------------------------------------------------
+[Block] Batterie [9BCF3D2A_BC76_4154_A728_3E8214D5A8DF]
+Package: Model / Pkg_Fahrradsystem / Sequence Diagramm
+Appears in diagrams:
+- Sequence Diagramm [EA12D2DD_B57C_4012_BD4E_01F2C0539B32]
+Connected relations:
+- Association [3C456194_0016_4763_A791_9DD3866CDBDD]: Batterie [9BCF3D2A_BC76_4154_A728_3E8214D5A8DF] -> Elektrisches System [16B58248_8877_4d50_84C4_3F34E4293774]
+====================================================================================================
+rank         : 6
+score        : 0.9637
+raw_score    : 0.8167
+type_weight  : 1.18
+lexical_bonus: 0.0000
+source       : semantic_fallback
+chunk_id     : node::EAID_16B58248_8877_4d50_84C4_3F34E4293774::0
+chunk_type   : node
+name         : Elektrisches System
+type         : Block
+source_id    : None
+----------------------------------------------------------------------------------------------------
+[Block] Elektrisches System [16B58248_8877_4d50_84C4_3F34E4293774]
+Package: Model / Pkg_Fahrradsystem / Sequence Diagramm
+Appears in diagrams:
+- Sequence Diagramm [EA12D2DD_B57C_4012_BD4E_01F2C0539B32]
+- Fahrradsystem [455C566B_E82A_4055_97E7_B22993085F64]
+Connected relations:
+- Association [3DB003F1_50B7_422d_80C3_99AE86858AB3]: Fahrer/in [8109BCA9_A64D_4b79_98B9_E32DADA3240F] -> Elektrisches System [16B58248_8877_4d50_84C4_3F34E4293774]
+- Association [66CD3DFF_E704_43a9_8282_30EA6A486EEB]: Anzeigen [E38B2C81_5864_42de_BACB_095C4DA2952C] -> Elektrisches System [16B58248_8877_4d50_84C4_3F34E4293774]
+- Association [8A142033_3489_4f06_A7C9_71EE0FB7CC87]: Motor [8DD6AAC1_3414_4a11_B0AC_A8ED70368750] -> Elektrisches System [16B58248_8877_4d50_84C4_3F34E4293774]
+- Association [3C456194_0016_4763_A791_9DD3866CDBDD]: Batterie [9BCF3D2A_BC76_4154_A728_3E8214D5A8DF] -> Elektrisches System [16B58248_8877_4d50_84C4_3F34E4293774]
+- Association [24CFE91D_3886_46ee_AAAB_726D294015EF]: E_Antrieb Kontrollesystem [6A185400_A455_4cda_90AD_816E115E19EC] -> Elektrisches System [16B58248_8877_4d50_84C4_3F34E4293774]
+====================================================================================================
+rank         : 7
+score        : 0.9591
+raw_score    : 0.8128
+type_weight  : 1.18
+lexical_bonus: 0.0000
+source       : semantic_fallback
+chunk_id     : node::EAID_9FF37A48_8FBB_4dc2_BBF2_071D4E759FE5::0
+chunk_type   : node
+name         : Abstellen
+type         : UseCase
+source_id    : None
+----------------------------------------------------------------------------------------------------
+[UseCase] Abstellen [9FF37A48_8FBB_4dc2_BBF2_071D4E759FE5]
+Package: Model / Pkg_Fahrradsystem / Use_Case_Diagramm
+Appears in diagrams:
+- Fahrrad fahren [055BD428_E02D_4bd3_9214_CEB96D675ACF]
+Connected relations:
+- Association [E8A6F467_C677_491f_BBDD_1290E0B77E9C]: Fahrer*in [216740E0_FBA8_4773_9F0A_ADA97FDDAE47] -> Abstellen [9FF37A48_8FBB_4dc2_BBF2_071D4E759FE5]
+- include [7F1CD33E_3072_4e89_8929_CF4914F301D6]: Abstellen [9FF37A48_8FBB_4dc2_BBF2_071D4E759FE5] -> Bremsen [9320FFDD_50F3_4ec5_92C8_13994ED3FC6F]
+====================================================================================================
+rank         : 8
+score        : 0.9587
+raw_score    : 0.8125
+type_weight  : 1.18
+lexical_bonus: 0.0000
+source       : semantic_fallback
+chunk_id     : node::EAID_216740E0_FBA8_4773_9F0A_ADA97FDDAE47::0
+chunk_type   : node
+name         : Fahrer*in
+type         : Actor
+source_id    : None
+----------------------------------------------------------------------------------------------------
+[Actor] Fahrer*in [216740E0_FBA8_4773_9F0A_ADA97FDDAE47]
+Package: Model / Pkg_Fahrradsystem / Use_Case_Diagramm
+Appears in diagrams:
+- Fahrrad fahren [055BD428_E02D_4bd3_9214_CEB96D675ACF]
+Connected relations:
+- Association [742D605A_8673_4856_9319_2F081E2238CC]: Fahrer*in [216740E0_FBA8_4773_9F0A_ADA97FDDAE47] -> Fahrrad fahren [A1E97E6F_64B7_4436_8690_2F7FB974EC58]
+- Association [E8A6F467_C677_491f_BBDD_1290E0B77E9C]: Fahrer*in [216740E0_FBA8_4773_9F0A_ADA97FDDAE47] -> Abstellen [9FF37A48_8FBB_4dc2_BBF2_071D4E759FE5]
+====================================================================================================
+rank         : 9
+score        : 0.9577
+raw_score    : 0.8116
+type_weight  : 1.18
+lexical_bonus: 0.0000
+source       : semantic_fallback
+chunk_id     : node::EAID_765A432C_BB6B_4619_8B84_599B96635F62::0
+chunk_type   : node
+name         : elektrischer Antrieb
+type         : Block
+source_id    : None
+----------------------------------------------------------------------------------------------------
+[Block] elektrischer Antrieb [765A432C_BB6B_4619_8B84_599B96635F62]
+Package: Model / Pkg_Fahrradsystem / bdd_Blocks
+Appears in diagrams:
+- Fahrradsystem [AB4214F0_398F_4cc2_8591_7E26B6E83FDA]
+Connected relations:
+- Association [30BB2726_E727_42c1_B6E6_054C5B468D9C]: elektrischer Antrieb [765A432C_BB6B_4619_8B84_599B96635F62] -> Antrieb [37AFD518_251D_4f7b_8101_DB5D5718BFAE]
+- Association [D45A1E12_DFC0_4e64_BB98_6E8DACCCDBA0]: E-Motor [28A0BEED_CFAE_4d48_BD45_9118B9095222] -> elektrischer Antrieb [765A432C_BB6B_4619_8B84_599B96635F62]
+====================================================================================================
+rank         : 10
+score        : 0.9568
+raw_score    : 0.8108
+type_weight  : 1.18
+lexical_bonus: 0.0000
+source       : semantic_fallback
+chunk_id     : node::EAID_9320FFDD_50F3_4ec5_92C8_13994ED3FC6F::0
+chunk_type   : node
+name         : Bremsen
+type         : UseCase
+source_id    : None
+----------------------------------------------------------------------------------------------------
+[UseCase] Bremsen [9320FFDD_50F3_4ec5_92C8_13994ED3FC6F]
+Package: Model / Pkg_Fahrradsystem / Use_Case_Diagramm
+Appears in diagrams:
+- Fahrrad fahren [055BD428_E02D_4bd3_9214_CEB96D675ACF]
+Connected relations:
+- include [FD776ADA_3ABE_4dc7_96C1_5EF7A024841F]: Fahrrad fahren [A1E97E6F_64B7_4436_8690_2F7FB974EC58] -> Bremsen [9320FFDD_50F3_4ec5_92C8_13994ED3FC6F]
+- include [7F1CD33E_3072_4e89_8929_CF4914F301D6]: Abstellen [9FF37A48_8FBB_4dc2_BBF2_071D4E759FE5] -> Bremsen [9320FFDD_50F3_4ec5_92C8_13994ED3FC6F]
+
+========================================================================================================================
+QUERY #6
+========================================================================================================================
+Was ist die Spannung des Akku
+STATUS: NO_EXPECTATION
+
+Detected intent    : ask_property_value
+Target entity      : Akku
+Asked slot         : spannung
+Expected answer    : property_value
+Reasoning mode     : direct_field_lookup
+Query tokens       : ['spannung', 'akku']
+Rewritten queries  : ['Akku', 'Akku spannung', 'Akku properties']
+Retrieval plan:
+  1. lookup_entity_node - 先定位目标元素节点
+  2. extract_properties - 从节点中抽取 Properties / Attributes
+  3. semantic_fallback - 若失败则语义兜底
+
+====================================================================================================
+Final Answer:
+未在 Akku 中找到与“spannung”对应的属性。
+Akku 当前可提取到的属性有：
+- I_Max = 15 A
+====================================================================================================
+====================================================================================================
+rank         : 1
+score        : 1.1800
+raw_score    : 0.9000
+type_weight  : 1.00
+lexical_bonus: 0.2800
+source       : lookup_entity_node
+chunk_id     : node::EAID_D0FFC59D_20F4_44d0_8042_ABEB4DF6AF72::0
+chunk_type   : node
+name         : Akku
+type         : Block
+source_id    : None
+----------------------------------------------------------------------------------------------------
+[Block] Akku [D0FFC59D_20F4_44d0_8042_ABEB4DF6AF72]
+Package: Model / Pkg_Fahrradsystem / bdd_Blocks
+Appears in diagrams:
+- Fahrradsystem [AB4214F0_398F_4cc2_8591_7E26B6E83FDA]
+Properties:
+- I_Max = 15 A
+Connected relations:
+- Association [919AA456_5F73_4de5_86BA_C4770172D25F]: Akku [D0FFC59D_20F4_44d0_8042_ABEB4DF6AF72] -> Energieversorgung [6D0AA0FC_D760_4147_AB32_E15B187055E5]
+====================================================================================================
+rank         : 2
+score        : 1.1254
+raw_score    : 0.8351
+type_weight  : 1.18
+lexical_bonus: 0.1400
+source       : semantic_fallback
+chunk_id     : node::EAID_6D0AA0FC_D760_4147_AB32_E15B187055E5::0
+chunk_type   : node
+name         : Energieversorgung
+type         : Block
+source_id    : None
+----------------------------------------------------------------------------------------------------
+[Block] Energieversorgung [6D0AA0FC_D760_4147_AB32_E15B187055E5]
+Package: Model / Pkg_Fahrradsystem / bdd_Blocks
+Appears in diagrams:
+- Fahrradsystem [AB4214F0_398F_4cc2_8591_7E26B6E83FDA]
+Connected relations:
+- Association [919AA456_5F73_4de5_86BA_C4770172D25F]: Akku [D0FFC59D_20F4_44d0_8042_ABEB4DF6AF72] -> Energieversorgung [6D0AA0FC_D760_4147_AB32_E15B187055E5]
+- Association [DE0659B3_322B_40c0_A72A_24510C5985B5]: Energieversorgung [6D0AA0FC_D760_4147_AB32_E15B187055E5] -> Fahrrad [0ABA6B51_76CD_40d4_8B25_5E902BE0706F]
+====================================================================================================
+rank         : 3
+score        : 0.9739
+raw_score    : 0.8509
+type_weight  : 0.98
+lexical_bonus: 0.1400
+source       : semantic_fallback
+chunk_id     : relation::EAID_919AA456_5F73_4de5_86BA_C4770172D25F::0
+chunk_type   : relation
+name         : None
+type         : Association
+source_id    : EAID_D0FFC59D_20F4_44d0_8042_ABEB4DF6AF72
+----------------------------------------------------------------------------------------------------
+[Association] Akku [D0FFC59D_20F4_44d0_8042_ABEB4DF6AF72] -> Energieversorgung [6D0AA0FC_D760_4147_AB32_E15B187055E5]
+Relation type: uml:Association
+Source element: Akku [D0FFC59D_20F4_44d0_8042_ABEB4DF6AF72] (Block)
+Target element: Energieversorgung [6D0AA0FC_D760_4147_AB32_E15B187055E5] (Block)
+Package: Model / Pkg_Fahrradsystem / bdd_Blocks
+Appears in diagrams:
+- Fahrradsystem [AB4214F0_398F_4cc2_8591_7E26B6E83FDA]
+Direction: Source -> Destination
+====================================================================================================
+rank         : 4
+score        : 0.9652
+raw_score    : 0.8179
+type_weight  : 1.18
+lexical_bonus: 0.0000
+source       : semantic_fallback
+chunk_id     : node::EAID_8109BCA9_A64D_4b79_98B9_E32DADA3240F::0
+chunk_type   : node
+name         : Fahrer/in
+type         : Actor
+source_id    : None
+----------------------------------------------------------------------------------------------------
+[Actor] Fahrer/in [8109BCA9_A64D_4b79_98B9_E32DADA3240F]
+Package: Model / Pkg_Fahrradsystem
+Appears in diagrams:
+- Fahrradsystem [AB4214F0_398F_4cc2_8591_7E26B6E83FDA]
+- Fahrer/in [DDBBFF1A_5003_4b77_BB42_BE9D623FFF6F]
+- Sequence Diagramm [EA12D2DD_B57C_4012_BD4E_01F2C0539B32]
+Properties:
+- m_M = 75 kg
+Connected relations:
+- Association [3DB003F1_50B7_422d_80C3_99AE86858AB3]: Fahrer/in [8109BCA9_A64D_4b79_98B9_E32DADA3240F] -> Elektrisches System [16B58248_8877_4d50_84C4_3F34E4293774]
+====================================================================================================
+rank         : 5
+score        : 0.9644
+raw_score    : 0.8173
+type_weight  : 1.18
+lexical_bonus: 0.0000
+source       : semantic_fallback
+chunk_id     : node::EAID_9BCF3D2A_BC76_4154_A728_3E8214D5A8DF::0
+chunk_type   : node
+name         : Batterie
+type         : Block
+source_id    : None
+----------------------------------------------------------------------------------------------------
+[Block] Batterie [9BCF3D2A_BC76_4154_A728_3E8214D5A8DF]
+Package: Model / Pkg_Fahrradsystem / Sequence Diagramm
+Appears in diagrams:
+- Sequence Diagramm [EA12D2DD_B57C_4012_BD4E_01F2C0539B32]
+Connected relations:
+- Association [3C456194_0016_4763_A791_9DD3866CDBDD]: Batterie [9BCF3D2A_BC76_4154_A728_3E8214D5A8DF] -> Elektrisches System [16B58248_8877_4d50_84C4_3F34E4293774]
+====================================================================================================
+rank         : 6
+score        : 0.9637
+raw_score    : 0.8167
+type_weight  : 1.18
+lexical_bonus: 0.0000
+source       : semantic_fallback
+chunk_id     : node::EAID_16B58248_8877_4d50_84C4_3F34E4293774::0
+chunk_type   : node
+name         : Elektrisches System
+type         : Block
+source_id    : None
+----------------------------------------------------------------------------------------------------
+[Block] Elektrisches System [16B58248_8877_4d50_84C4_3F34E4293774]
+Package: Model / Pkg_Fahrradsystem / Sequence Diagramm
+Appears in diagrams:
+- Sequence Diagramm [EA12D2DD_B57C_4012_BD4E_01F2C0539B32]
+- Fahrradsystem [455C566B_E82A_4055_97E7_B22993085F64]
+Connected relations:
+- Association [3DB003F1_50B7_422d_80C3_99AE86858AB3]: Fahrer/in [8109BCA9_A64D_4b79_98B9_E32DADA3240F] -> Elektrisches System [16B58248_8877_4d50_84C4_3F34E4293774]
+- Association [66CD3DFF_E704_43a9_8282_30EA6A486EEB]: Anzeigen [E38B2C81_5864_42de_BACB_095C4DA2952C] -> Elektrisches System [16B58248_8877_4d50_84C4_3F34E4293774]
+- Association [8A142033_3489_4f06_A7C9_71EE0FB7CC87]: Motor [8DD6AAC1_3414_4a11_B0AC_A8ED70368750] -> Elektrisches System [16B58248_8877_4d50_84C4_3F34E4293774]
+- Association [3C456194_0016_4763_A791_9DD3866CDBDD]: Batterie [9BCF3D2A_BC76_4154_A728_3E8214D5A8DF] -> Elektrisches System [16B58248_8877_4d50_84C4_3F34E4293774]
+- Association [24CFE91D_3886_46ee_AAAB_726D294015EF]: E_Antrieb Kontrollesystem [6A185400_A455_4cda_90AD_816E115E19EC] -> Elektrisches System [16B58248_8877_4d50_84C4_3F34E4293774]
+====================================================================================================
+rank         : 7
+score        : 0.9591
+raw_score    : 0.8128
+type_weight  : 1.18
+lexical_bonus: 0.0000
+source       : semantic_fallback
+chunk_id     : node::EAID_9FF37A48_8FBB_4dc2_BBF2_071D4E759FE5::0
+chunk_type   : node
+name         : Abstellen
+type         : UseCase
+source_id    : None
+----------------------------------------------------------------------------------------------------
+[UseCase] Abstellen [9FF37A48_8FBB_4dc2_BBF2_071D4E759FE5]
+Package: Model / Pkg_Fahrradsystem / Use_Case_Diagramm
+Appears in diagrams:
+- Fahrrad fahren [055BD428_E02D_4bd3_9214_CEB96D675ACF]
+Connected relations:
+- Association [E8A6F467_C677_491f_BBDD_1290E0B77E9C]: Fahrer*in [216740E0_FBA8_4773_9F0A_ADA97FDDAE47] -> Abstellen [9FF37A48_8FBB_4dc2_BBF2_071D4E759FE5]
+- include [7F1CD33E_3072_4e89_8929_CF4914F301D6]: Abstellen [9FF37A48_8FBB_4dc2_BBF2_071D4E759FE5] -> Bremsen [9320FFDD_50F3_4ec5_92C8_13994ED3FC6F]
+====================================================================================================
+rank         : 8
+score        : 0.9587
+raw_score    : 0.8125
+type_weight  : 1.18
+lexical_bonus: 0.0000
+source       : semantic_fallback
+chunk_id     : node::EAID_216740E0_FBA8_4773_9F0A_ADA97FDDAE47::0
+chunk_type   : node
+name         : Fahrer*in
+type         : Actor
+source_id    : None
+----------------------------------------------------------------------------------------------------
+[Actor] Fahrer*in [216740E0_FBA8_4773_9F0A_ADA97FDDAE47]
+Package: Model / Pkg_Fahrradsystem / Use_Case_Diagramm
+Appears in diagrams:
+- Fahrrad fahren [055BD428_E02D_4bd3_9214_CEB96D675ACF]
+Connected relations:
+- Association [742D605A_8673_4856_9319_2F081E2238CC]: Fahrer*in [216740E0_FBA8_4773_9F0A_ADA97FDDAE47] -> Fahrrad fahren [A1E97E6F_64B7_4436_8690_2F7FB974EC58]
+- Association [E8A6F467_C677_491f_BBDD_1290E0B77E9C]: Fahrer*in [216740E0_FBA8_4773_9F0A_ADA97FDDAE47] -> Abstellen [9FF37A48_8FBB_4dc2_BBF2_071D4E759FE5]
+====================================================================================================
+rank         : 9
+score        : 0.9577
+raw_score    : 0.8116
+type_weight  : 1.18
+lexical_bonus: 0.0000
+source       : semantic_fallback
+chunk_id     : node::EAID_765A432C_BB6B_4619_8B84_599B96635F62::0
+chunk_type   : node
+name         : elektrischer Antrieb
+type         : Block
+source_id    : None
+----------------------------------------------------------------------------------------------------
+[Block] elektrischer Antrieb [765A432C_BB6B_4619_8B84_599B96635F62]
+Package: Model / Pkg_Fahrradsystem / bdd_Blocks
+Appears in diagrams:
+- Fahrradsystem [AB4214F0_398F_4cc2_8591_7E26B6E83FDA]
+Connected relations:
+- Association [30BB2726_E727_42c1_B6E6_054C5B468D9C]: elektrischer Antrieb [765A432C_BB6B_4619_8B84_599B96635F62] -> Antrieb [37AFD518_251D_4f7b_8101_DB5D5718BFAE]
+- Association [D45A1E12_DFC0_4e64_BB98_6E8DACCCDBA0]: E-Motor [28A0BEED_CFAE_4d48_BD45_9118B9095222] -> elektrischer Antrieb [765A432C_BB6B_4619_8B84_599B96635F62]
+====================================================================================================
+rank         : 10
+score        : 0.9568
+raw_score    : 0.8108
+type_weight  : 1.18
+lexical_bonus: 0.0000
+source       : semantic_fallback
+chunk_id     : node::EAID_9320FFDD_50F3_4ec5_92C8_13994ED3FC6F::0
+chunk_type   : node
+name         : Bremsen
+type         : UseCase
+source_id    : None
+----------------------------------------------------------------------------------------------------
+[UseCase] Bremsen [9320FFDD_50F3_4ec5_92C8_13994ED3FC6F]
+Package: Model / Pkg_Fahrradsystem / Use_Case_Diagramm
+Appears in diagrams:
+- Fahrrad fahren [055BD428_E02D_4bd3_9214_CEB96D675ACF]
+Connected relations:
+- include [FD776ADA_3ABE_4dc7_96C1_5EF7A024841F]: Fahrrad fahren [A1E97E6F_64B7_4436_8690_2F7FB974EC58] -> Bremsen [9320FFDD_50F3_4ec5_92C8_13994ED3FC6F]
+- include [7F1CD33E_3072_4e89_8929_CF4914F301D6]: Abstellen [9FF37A48_8FBB_4dc2_BBF2_071D4E759FE5] -> Bremsen [9320FFDD_50F3_4ec5_92C8_13994ED3FC6F]
+
+========================================================================================================================
+QUERY #7
+========================================================================================================================
+Wie hoch ist die Beschleunigung
+STATUS: NO_EXPECTATION
+
+Detected intent    : ask_property_value
+Target entity      : Beschleunigung
+Asked slot         : beschleunigung
+Expected answer    : property_value
+Reasoning mode     : direct_field_lookup
+Query tokens       : ['beschleunigung']
+Rewritten queries  : ['Beschleunigung', 'Beschleunigung beschleunigung', 'Beschleunigung properties']
+Retrieval plan:
+  1. lookup_entity_node - 先定位目标元素节点
+  2. extract_properties - 从节点中抽取 Properties / Attributes
+  3. semantic_fallback - 若失败则语义兜底
+
+====================================================================================================
+Final Answer:
+Beschleunigung 的 beschleunigung：Beschleunigung: 0,8
+====================================================================================================
+====================================================================================================
+rank         : 1
+score        : 1.1800
+raw_score    : 0.9000
+type_weight  : 1.00
+lexical_bonus: 0.2800
+source       : lookup_entity_node
+chunk_id     : node::EAID_FB3B7B65_43DD_46c3_884A_62492FB01889::0
+chunk_type   : node
+name         : Beschleunigung
+type         : Requirement
+source_id    : F_002
+----------------------------------------------------------------------------------------------------
+[Requirement] Beschleunigung [FB3B7B65_43DD_46c3_884A_62492FB01889]
+ID: F_002
+Text: Beschleunigung auf 0.8 m/s²
+Package: Model / Pkg_Anforderungen
+Appears in diagrams:
+- Pkg_Anforderungen [1CB0CCC0_65DC_460d_8F64_21BAC9A7B740]
+Attributes:
+- Beschleunigung: 0,8
+- Einheit: m/s²
+Connected relations:
+- satisfy [9B07A062_CA90_4e04_BE83_5D237A7F7ED5]: Fahrrad [0ABA6B51_76CD_40d4_8B25_5E902BE0706F] -> Beschleunigung [FB3B7B65_43DD_46c3_884A_62492FB01889]
+====================================================================================================
+rank         : 2
+score        : 1.2160
+raw_score    : 0.8441
+type_weight  : 1.18
+lexical_bonus: 0.2200
+source       : semantic_fallback
+chunk_id     : node::EAID_BCC28AC0_0AD8_4410_9570_D770CB6BFD5F::0
+chunk_type   : node
+name         : Beschleunigungszeit
+type         : Requirement
+source_id    : F_003
+----------------------------------------------------------------------------------------------------
+[Requirement] Beschleunigungszeit [BCC28AC0_0AD8_4410_9570_D770CB6BFD5F]
+ID: F_003
+Text: Beschleunigungszeit auf 25km/s bis 9s
+Package: Model / Pkg_Anforderungen
+Appears in diagrams:
+- Pkg_Anforderungen [1CB0CCC0_65DC_460d_8F64_21BAC9A7B740]
+Attributes:
+- Beschleunigungszeit: 9
+- Einheit: s
+Connected relations:
+- satisfy [7A6BF065_9B18_4c72_904F_0FBF48979CB0]: Fahrrad [0ABA6B51_76CD_40d4_8B25_5E902BE0706F] -> Beschleunigungszeit [BCC28AC0_0AD8_4410_9570_D770CB6BFD5F]
+====================================================================================================
+rank         : 3
+score        : 1.1925
+raw_score    : 0.8242
+type_weight  : 1.18
+lexical_bonus: 0.2200
+source       : semantic_fallback
+chunk_id     : node::EAID_0ABA6B51_76CD_40d4_8B25_5E902BE0706F::0
+chunk_type   : node
+name         : Fahrrad
+type         : Block
+source_id    : None
+----------------------------------------------------------------------------------------------------
+[Block] Fahrrad [0ABA6B51_76CD_40d4_8B25_5E902BE0706F]
+Package: Model / Pkg_Fahrradsystem / bdd_Blocks
+Appears in diagrams:
+- Pkg_Anforderungen [1CB0CCC0_65DC_460d_8F64_21BAC9A7B740]
+- Fahrradsystem [AB4214F0_398F_4cc2_8591_7E26B6E83FDA]
+Properties:
+- m_F = 28 kg
+Connected relations:
+- satisfy [0E6A4B22_6B40_4247_9DA9_143B4405E66D]: Fahrrad [0ABA6B51_76CD_40d4_8B25_5E902BE0706F] -> Gesamtmasse_Fahrrad [842523F4_3152_48cd_9301_2DF1900D883B]
+- satisfy [7A6BF065_9B18_4c72_904F_0FBF48979CB0]: Fahrrad [0ABA6B51_76CD_40d4_8B25_5E902BE0706F] -> Beschleunigungszeit [BCC28AC0_0AD8_4410_9570_D770CB6BFD5F]
+- satisfy [9B07A062_CA90_4e04_BE83_5D237A7F7ED5]: Fahrrad [0ABA6B51_76CD_40d4_8B25_5E902BE0706F] -> Beschleunigung [FB3B7B65_43DD_46c3_884A_62492FB01889]
+- Association [1FA74257_272C_48b5_B3EB_3A72989DC500]: Bremssystem [3FAC79F9_BBAD_4589_B7DA_AD9EDCCDF274] -> Fahrrad [0ABA6B51_76CD_40d4_8B25_5E902BE0706F]
+- Association [DE0659B3_322B_40c0_A72A_24510C5985B5]: Energieversorgung [6D0AA0FC_D760_4147_AB32_E15B187055E5] -> Fahrrad [0ABA6B51_76CD_40d4_8B25_5E902BE0706F]
+- Association [299F78D7_1985_4172_95A0_0F11F7C741A2]: Momentenwandler [EE71FEB8_50AD_4277_BD32_BC74F744F5C4] -> Fahrrad [0ABA6B51_76CD_40d4_8B25_5E902BE0706F]
+- Association [55E9197C_FB0D_4cd4_ACF0_2D64F39140E4]: Mechanik Struktur [3A26B4DA_E67D_44a4_A590_7A68ECF6312C] -> Fahrrad [0ABA6B51_76CD_40d4_8B25_5E902BE0706F]
+- Association [636918F9_3F43_4892_9480_5CBF9818DF51]: Steuerung [FC35C227_F39F_4cd6_B113_E3386DA17579] -> Fahrrad [0ABA6B51_76CD_40d4_8B25_5E902BE0706F]
+====================================================================================================
+rank         : 4
+score        : 1.0191
+raw_score    : 0.8636
+type_weight  : 1.18
+lexical_bonus: 0.0000
+source       : semantic_fallback
+chunk_id     : node::EAID_07772751_4BC8_47d8_9DA5_2881F348F981::0
+chunk_type   : node
+name         : Beschleunigen
+type         : UseCase
+source_id    : None
+----------------------------------------------------------------------------------------------------
+[UseCase] Beschleunigen [07772751_4BC8_47d8_9DA5_2881F348F981]
+Package: Model / Pkg_Fahrradsystem / Use_Case_Diagramm
+Appears in diagrams:
+- Fahrrad fahren [055BD428_E02D_4bd3_9214_CEB96D675ACF]
+Connected relations:
+- include [9B6FC8E9_93D2_4e67_AF49_0ACB6846070D]: Fahrrad fahren [A1E97E6F_64B7_4436_8690_2F7FB974EC58] -> Beschleunigen [07772751_4BC8_47d8_9DA5_2881F348F981]
+====================================================================================================
+rank         : 5
+score        : 0.9641
+raw_score    : 0.8170
+type_weight  : 1.18
+lexical_bonus: 0.0000
+source       : semantic_fallback
+chunk_id     : node::EAID_A1E97E6F_64B7_4436_8690_2F7FB974EC58::0
+chunk_type   : node
+name         : Fahrrad fahren
+type         : UseCase
+source_id    : None
+----------------------------------------------------------------------------------------------------
+[UseCase] Fahrrad fahren [A1E97E6F_64B7_4436_8690_2F7FB974EC58]
+Package: Model / Pkg_Fahrradsystem / Use_Case_Diagramm
+Appears in diagrams:
+- Fahrrad fahren [055BD428_E02D_4bd3_9214_CEB96D675ACF]
+Connected relations:
+- Association [742D605A_8673_4856_9319_2F081E2238CC]: Fahrer*in [216740E0_FBA8_4773_9F0A_ADA97FDDAE47] -> Fahrrad fahren [A1E97E6F_64B7_4436_8690_2F7FB974EC58]
+- include [9B6FC8E9_93D2_4e67_AF49_0ACB6846070D]: Fahrrad fahren [A1E97E6F_64B7_4436_8690_2F7FB974EC58] -> Beschleunigen [07772751_4BC8_47d8_9DA5_2881F348F981]
+- include [F069C266_D7EE_42dd_BCA9_D43E6CBDF741]: Fahrrad fahren [A1E97E6F_64B7_4436_8690_2F7FB974EC58] -> Lenken [43E1F2D3_FE4F_4843_A430_4CBF1B7C045F]
+- include [FD776ADA_3ABE_4dc7_96C1_5EF7A024841F]: Fahrrad fahren [A1E97E6F_64B7_4436_8690_2F7FB974EC58] -> Bremsen [9320FFDD_50F3_4ec5_92C8_13994ED3FC6F]
+- extend [2690D320_520E_456f_8270_47F3DE39A1D7]: E-System starten [14F2FA4F_7AB5_41ff_8C21_23F4CC79F9F7] -> Fahrrad fahren [A1E97E6F_64B7_4436_8690_2F7FB974EC58]
+====================================================================================================
+rank         : 6
+score        : 0.9608
+raw_score    : 0.8142
+type_weight  : 1.18
+lexical_bonus: 0.0000
+source       : semantic_fallback
+chunk_id     : node::EAID_9371CED8_0678_412c_90AF_D1B69C8A9BFE::0
+chunk_type   : node
+name         : Abtrieb
+type         : Block
+source_id    : None
+----------------------------------------------------------------------------------------------------
+[Block] Abtrieb [9371CED8_0678_412c_90AF_D1B69C8A9BFE]
+Package: Model / Pkg_Fahrradsystem / bdd_Blocks
+Appears in diagrams:
+- Fahrradsystem [AB4214F0_398F_4cc2_8591_7E26B6E83FDA]
+Connected relations:
+- Association [2A068EB3_3FC8_4b9d_9F0D_FABB364C47F6]: Abtrieb [9371CED8_0678_412c_90AF_D1B69C8A9BFE] -> Momentenwandler [EE71FEB8_50AD_4277_BD32_BC74F744F5C4]
+- Association [7C789D4B_032D_44be_87C4_856459C9F837]: Hinterrad [322F1ED0_BB19_47f4_BB58_2AE20C2FF636] -> Abtrieb [9371CED8_0678_412c_90AF_D1B69C8A9BFE]
+====================================================================================================
+rank         : 7
+score        : 0.9606
+raw_score    : 0.8141
+type_weight  : 1.18
+lexical_bonus: 0.0000
+source       : semantic_fallback
+chunk_id     : node::EAID_3A26B4DA_E67D_44a4_A590_7A68ECF6312C::0
+chunk_type   : node
+name         : Mechanik Struktur
+type         : Block
+source_id    : None
+----------------------------------------------------------------------------------------------------
+[Block] Mechanik Struktur [3A26B4DA_E67D_44a4_A590_7A68ECF6312C]
+Package: Model / Pkg_Fahrradsystem / bdd_Blocks
+Appears in diagrams:
+- Fahrradsystem [AB4214F0_398F_4cc2_8591_7E26B6E83FDA]
+Connected relations:
+- Association [55E9197C_FB0D_4cd4_ACF0_2D64F39140E4]: Mechanik Struktur [3A26B4DA_E67D_44a4_A590_7A68ECF6312C] -> Fahrrad [0ABA6B51_76CD_40d4_8B25_5E902BE0706F]
+- Association [48266C58_5561_4500_AEE6_4CFE63C62DCF]: Lenker [CA8E8BD2_780B_4948_9756_DD10D7F9C671] -> Mechanik Struktur [3A26B4DA_E67D_44a4_A590_7A68ECF6312C]
+- Association [3ECFBB00_3327_43a0_9A11_D326F900957D]: Rahmen [A12C30F7_5BCB_4ed5_B093_F8E8C46A36D5] -> Mechanik Struktur [3A26B4DA_E67D_44a4_A590_7A68ECF6312C]
+- Association [7F1D8569_7C01_4c29_A960_4D9B9D6BFBF8]: Sattel [D6A034C3_2D07_4d79_A807_16097FEB9786] -> Mechanik Struktur [3A26B4DA_E67D_44a4_A590_7A68ECF6312C]
+====================================================================================================
+rank         : 8
+score        : 0.9559
+raw_score    : 0.8326
+type_weight  : 0.98
+lexical_bonus: 0.1400
+source       : semantic_fallback
+chunk_id     : relation::EAID_9B07A062_CA90_4e04_BE83_5D237A7F7ED5::0
+chunk_type   : relation
+name         : None
+type         : satisfy
+source_id    : EAID_0ABA6B51_76CD_40d4_8B25_5E902BE0706F
+----------------------------------------------------------------------------------------------------
+[satisfy] Fahrrad [0ABA6B51_76CD_40d4_8B25_5E902BE0706F] -> Beschleunigung [FB3B7B65_43DD_46c3_884A_62492FB01889]
+Relation type: uml:Dependency
+Source element: Fahrrad [0ABA6B51_76CD_40d4_8B25_5E902BE0706F] (Block)
+Target element: Beschleunigung [FB3B7B65_43DD_46c3_884A_62492FB01889] (Requirement)
+Package: Model / Pkg_Fahrradsystem / bdd_Blocks
+Appears in diagrams:
+- Pkg_Anforderungen [1CB0CCC0_65DC_460d_8F64_21BAC9A7B740]
+Direction: Source -> Destination
+====================================================================================================
+rank         : 9
+score        : 0.9541
+raw_score    : 0.8086
+type_weight  : 1.18
+lexical_bonus: 0.0000
+source       : semantic_fallback
+chunk_id     : node::EAID_9FF37A48_8FBB_4dc2_BBF2_071D4E759FE5::0
+chunk_type   : node
+name         : Abstellen
+type         : UseCase
+source_id    : None
+----------------------------------------------------------------------------------------------------
+[UseCase] Abstellen [9FF37A48_8FBB_4dc2_BBF2_071D4E759FE5]
+Package: Model / Pkg_Fahrradsystem / Use_Case_Diagramm
+Appears in diagrams:
+- Fahrrad fahren [055BD428_E02D_4bd3_9214_CEB96D675ACF]
+Connected relations:
+- Association [E8A6F467_C677_491f_BBDD_1290E0B77E9C]: Fahrer*in [216740E0_FBA8_4773_9F0A_ADA97FDDAE47] -> Abstellen [9FF37A48_8FBB_4dc2_BBF2_071D4E759FE5]
+- include [7F1CD33E_3072_4e89_8929_CF4914F301D6]: Abstellen [9FF37A48_8FBB_4dc2_BBF2_071D4E759FE5] -> Bremsen [9320FFDD_50F3_4ec5_92C8_13994ED3FC6F]
+====================================================================================================
+rank         : 10
+score        : 0.9538
+raw_score    : 0.8304
+type_weight  : 0.98
+lexical_bonus: 0.1400
+source       : semantic_fallback
+chunk_id     : relation::EAID_7A6BF065_9B18_4c72_904F_0FBF48979CB0::0
+chunk_type   : relation
+name         : None
+type         : satisfy
+source_id    : EAID_0ABA6B51_76CD_40d4_8B25_5E902BE0706F
+----------------------------------------------------------------------------------------------------
+[satisfy] Fahrrad [0ABA6B51_76CD_40d4_8B25_5E902BE0706F] -> Beschleunigungszeit [BCC28AC0_0AD8_4410_9570_D770CB6BFD5F]
+Relation type: uml:Dependency
+Source element: Fahrrad [0ABA6B51_76CD_40d4_8B25_5E902BE0706F] (Block)
+Target element: Beschleunigungszeit [BCC28AC0_0AD8_4410_9570_D770CB6BFD5F] (Requirement)
+Package: Model / Pkg_Fahrradsystem / bdd_Blocks
+Appears in diagrams:
+- Pkg_Anforderungen [1CB0CCC0_65DC_460d_8F64_21BAC9A7B740]
+Direction: Source -> Destination
+
+========================================================================================================================
+QUERY #8
+========================================================================================================================
+Wie hoch ist die Beschleunigungszeit
+STATUS: NO_EXPECTATION
+
+Detected intent    : ask_property_value
+Target entity      : Beschleunigungszeit
+Asked slot         : beschleunigungszeit
+Expected answer    : property_value
+Reasoning mode     : direct_field_lookup
+Query tokens       : ['beschleunigungszeit']
+Rewritten queries  : ['Beschleunigungszeit', 'Beschleunigungszeit beschleunigungszeit', 'Beschleunigungszeit properties']
+Retrieval plan:
+  1. lookup_entity_node - 先定位目标元素节点
+  2. extract_properties - 从节点中抽取 Properties / Attributes
+  3. semantic_fallback - 若失败则语义兜底
+
+====================================================================================================
+Final Answer:
+Beschleunigungszeit 的 beschleunigungszeit：Beschleunigungszeit: 9
+====================================================================================================
+====================================================================================================
+rank         : 1
+score        : 1.1800
+raw_score    : 0.9000
+type_weight  : 1.00
+lexical_bonus: 0.2800
+source       : lookup_entity_node
+chunk_id     : node::EAID_BCC28AC0_0AD8_4410_9570_D770CB6BFD5F::0
+chunk_type   : node
+name         : Beschleunigungszeit
+type         : Requirement
+source_id    : F_003
+----------------------------------------------------------------------------------------------------
+[Requirement] Beschleunigungszeit [BCC28AC0_0AD8_4410_9570_D770CB6BFD5F]
+ID: F_003
+Text: Beschleunigungszeit auf 25km/s bis 9s
+Package: Model / Pkg_Anforderungen
+Appears in diagrams:
+- Pkg_Anforderungen [1CB0CCC0_65DC_460d_8F64_21BAC9A7B740]
+Attributes:
+- Beschleunigungszeit: 9
+- Einheit: s
+Connected relations:
+- satisfy [7A6BF065_9B18_4c72_904F_0FBF48979CB0]: Fahrrad [0ABA6B51_76CD_40d4_8B25_5E902BE0706F] -> Beschleunigungszeit [BCC28AC0_0AD8_4410_9570_D770CB6BFD5F]
+====================================================================================================
+rank         : 2
+score        : 1.1846
+raw_score    : 0.8175
+type_weight  : 1.18
+lexical_bonus: 0.2200
+source       : semantic_fallback
+chunk_id     : node::EAID_0ABA6B51_76CD_40d4_8B25_5E902BE0706F::0
+chunk_type   : node
+name         : Fahrrad
+type         : Block
+source_id    : None
+----------------------------------------------------------------------------------------------------
+[Block] Fahrrad [0ABA6B51_76CD_40d4_8B25_5E902BE0706F]
+Package: Model / Pkg_Fahrradsystem / bdd_Blocks
+Appears in diagrams:
+- Pkg_Anforderungen [1CB0CCC0_65DC_460d_8F64_21BAC9A7B740]
+- Fahrradsystem [AB4214F0_398F_4cc2_8591_7E26B6E83FDA]
+Properties:
+- m_F = 28 kg
+Connected relations:
+- satisfy [0E6A4B22_6B40_4247_9DA9_143B4405E66D]: Fahrrad [0ABA6B51_76CD_40d4_8B25_5E902BE0706F] -> Gesamtmasse_Fahrrad [842523F4_3152_48cd_9301_2DF1900D883B]
+- satisfy [7A6BF065_9B18_4c72_904F_0FBF48979CB0]: Fahrrad [0ABA6B51_76CD_40d4_8B25_5E902BE0706F] -> Beschleunigungszeit [BCC28AC0_0AD8_4410_9570_D770CB6BFD5F]
+- satisfy [9B07A062_CA90_4e04_BE83_5D237A7F7ED5]: Fahrrad [0ABA6B51_76CD_40d4_8B25_5E902BE0706F] -> Beschleunigung [FB3B7B65_43DD_46c3_884A_62492FB01889]
+- Association [1FA74257_272C_48b5_B3EB_3A72989DC500]: Bremssystem [3FAC79F9_BBAD_4589_B7DA_AD9EDCCDF274] -> Fahrrad [0ABA6B51_76CD_40d4_8B25_5E902BE0706F]
+- Association [DE0659B3_322B_40c0_A72A_24510C5985B5]: Energieversorgung [6D0AA0FC_D760_4147_AB32_E15B187055E5] -> Fahrrad [0ABA6B51_76CD_40d4_8B25_5E902BE0706F]
+- Association [299F78D7_1985_4172_95A0_0F11F7C741A2]: Momentenwandler [EE71FEB8_50AD_4277_BD32_BC74F744F5C4] -> Fahrrad [0ABA6B51_76CD_40d4_8B25_5E902BE0706F]
+- Association [55E9197C_FB0D_4cd4_ACF0_2D64F39140E4]: Mechanik Struktur [3A26B4DA_E67D_44a4_A590_7A68ECF6312C] -> Fahrrad [0ABA6B51_76CD_40d4_8B25_5E902BE0706F]
+- Association [636918F9_3F43_4892_9480_5CBF9818DF51]: Steuerung [FC35C227_F39F_4cd6_B113_E3386DA17579] -> Fahrrad [0ABA6B51_76CD_40d4_8B25_5E902BE0706F]
+====================================================================================================
+rank         : 3
+score        : 0.9955
+raw_score    : 0.8437
+type_weight  : 1.18
+lexical_bonus: 0.0000
+source       : semantic_fallback
+chunk_id     : node::EAID_07772751_4BC8_47d8_9DA5_2881F348F981::0
+chunk_type   : node
+name         : Beschleunigen
+type         : UseCase
+source_id    : None
+----------------------------------------------------------------------------------------------------
+[UseCase] Beschleunigen [07772751_4BC8_47d8_9DA5_2881F348F981]
+Package: Model / Pkg_Fahrradsystem / Use_Case_Diagramm
+Appears in diagrams:
+- Fahrrad fahren [055BD428_E02D_4bd3_9214_CEB96D675ACF]
+Connected relations:
+- include [9B6FC8E9_93D2_4e67_AF49_0ACB6846070D]: Fahrrad fahren [A1E97E6F_64B7_4436_8690_2F7FB974EC58] -> Beschleunigen [07772751_4BC8_47d8_9DA5_2881F348F981]
+====================================================================================================
+rank         : 4
+score        : 0.9923
+raw_score    : 0.8410
+type_weight  : 1.18
+lexical_bonus: 0.0000
+source       : semantic_fallback
+chunk_id     : node::EAID_FB3B7B65_43DD_46c3_884A_62492FB01889::0
+chunk_type   : node
+name         : Beschleunigung
+type         : Requirement
+source_id    : F_002
+----------------------------------------------------------------------------------------------------
+[Requirement] Beschleunigung [FB3B7B65_43DD_46c3_884A_62492FB01889]
+ID: F_002
+Text: Beschleunigung auf 0.8 m/s²
+Package: Model / Pkg_Anforderungen
+Appears in diagrams:
+- Pkg_Anforderungen [1CB0CCC0_65DC_460d_8F64_21BAC9A7B740]
+Attributes:
+- Beschleunigung: 0,8
+- Einheit: m/s²
+Connected relations:
+- satisfy [9B07A062_CA90_4e04_BE83_5D237A7F7ED5]: Fahrrad [0ABA6B51_76CD_40d4_8B25_5E902BE0706F] -> Beschleunigung [FB3B7B65_43DD_46c3_884A_62492FB01889]
+====================================================================================================
+rank         : 5
+score        : 0.9619
+raw_score    : 0.8387
+type_weight  : 0.98
+lexical_bonus: 0.1400
+source       : semantic_fallback
+chunk_id     : relation::EAID_7A6BF065_9B18_4c72_904F_0FBF48979CB0::0
+chunk_type   : relation
+name         : None
+type         : satisfy
+source_id    : EAID_0ABA6B51_76CD_40d4_8B25_5E902BE0706F
+----------------------------------------------------------------------------------------------------
+[satisfy] Fahrrad [0ABA6B51_76CD_40d4_8B25_5E902BE0706F] -> Beschleunigungszeit [BCC28AC0_0AD8_4410_9570_D770CB6BFD5F]
+Relation type: uml:Dependency
+Source element: Fahrrad [0ABA6B51_76CD_40d4_8B25_5E902BE0706F] (Block)
+Target element: Beschleunigungszeit [BCC28AC0_0AD8_4410_9570_D770CB6BFD5F] (Requirement)
+Package: Model / Pkg_Fahrradsystem / bdd_Blocks
+Appears in diagrams:
+- Pkg_Anforderungen [1CB0CCC0_65DC_460d_8F64_21BAC9A7B740]
+Direction: Source -> Destination
+====================================================================================================
+rank         : 6
+score        : 0.9550
+raw_score    : 0.8093
+type_weight  : 1.18
+lexical_bonus: 0.0000
+source       : semantic_fallback
+chunk_id     : node::EAID_9371CED8_0678_412c_90AF_D1B69C8A9BFE::0
+chunk_type   : node
+name         : Abtrieb
+type         : Block
+source_id    : None
+----------------------------------------------------------------------------------------------------
+[Block] Abtrieb [9371CED8_0678_412c_90AF_D1B69C8A9BFE]
+Package: Model / Pkg_Fahrradsystem / bdd_Blocks
+Appears in diagrams:
+- Fahrradsystem [AB4214F0_398F_4cc2_8591_7E26B6E83FDA]
+Connected relations:
+- Association [2A068EB3_3FC8_4b9d_9F0D_FABB364C47F6]: Abtrieb [9371CED8_0678_412c_90AF_D1B69C8A9BFE] -> Momentenwandler [EE71FEB8_50AD_4277_BD32_BC74F744F5C4]
+- Association [7C789D4B_032D_44be_87C4_856459C9F837]: Hinterrad [322F1ED0_BB19_47f4_BB58_2AE20C2FF636] -> Abtrieb [9371CED8_0678_412c_90AF_D1B69C8A9BFE]
+====================================================================================================
+rank         : 7
+score        : 0.9500
+raw_score    : 0.8051
+type_weight  : 1.18
+lexical_bonus: 0.0000
+source       : semantic_fallback
+chunk_id     : node::EAID_A1E97E6F_64B7_4436_8690_2F7FB974EC58::0
+chunk_type   : node
+name         : Fahrrad fahren
+type         : UseCase
+source_id    : None
+----------------------------------------------------------------------------------------------------
+[UseCase] Fahrrad fahren [A1E97E6F_64B7_4436_8690_2F7FB974EC58]
+Package: Model / Pkg_Fahrradsystem / Use_Case_Diagramm
+Appears in diagrams:
+- Fahrrad fahren [055BD428_E02D_4bd3_9214_CEB96D675ACF]
+Connected relations:
+- Association [742D605A_8673_4856_9319_2F081E2238CC]: Fahrer*in [216740E0_FBA8_4773_9F0A_ADA97FDDAE47] -> Fahrrad fahren [A1E97E6F_64B7_4436_8690_2F7FB974EC58]
+- include [9B6FC8E9_93D2_4e67_AF49_0ACB6846070D]: Fahrrad fahren [A1E97E6F_64B7_4436_8690_2F7FB974EC58] -> Beschleunigen [07772751_4BC8_47d8_9DA5_2881F348F981]
+- include [F069C266_D7EE_42dd_BCA9_D43E6CBDF741]: Fahrrad fahren [A1E97E6F_64B7_4436_8690_2F7FB974EC58] -> Lenken [43E1F2D3_FE4F_4843_A430_4CBF1B7C045F]
+- include [FD776ADA_3ABE_4dc7_96C1_5EF7A024841F]: Fahrrad fahren [A1E97E6F_64B7_4436_8690_2F7FB974EC58] -> Bremsen [9320FFDD_50F3_4ec5_92C8_13994ED3FC6F]
+- extend [2690D320_520E_456f_8270_47F3DE39A1D7]: E-System starten [14F2FA4F_7AB5_41ff_8C21_23F4CC79F9F7] -> Fahrrad fahren [A1E97E6F_64B7_4436_8690_2F7FB974EC58]
+====================================================================================================
+rank         : 8
+score        : 0.9485
+raw_score    : 0.8038
+type_weight  : 1.18
+lexical_bonus: 0.0000
+source       : semantic_fallback
+chunk_id     : node::EAID_EE71FEB8_50AD_4277_BD32_BC74F744F5C4::0
+chunk_type   : node
+name         : Momentenwandler
+type         : Block
+source_id    : None
+----------------------------------------------------------------------------------------------------
+[Block] Momentenwandler [EE71FEB8_50AD_4277_BD32_BC74F744F5C4]
+Package: Model / Pkg_Fahrradsystem / bdd_Blocks
+Appears in diagrams:
+- Fahrradsystem [AB4214F0_398F_4cc2_8591_7E26B6E83FDA]
+Connected relations:
+- Association [2A068EB3_3FC8_4b9d_9F0D_FABB364C47F6]: Abtrieb [9371CED8_0678_412c_90AF_D1B69C8A9BFE] -> Momentenwandler [EE71FEB8_50AD_4277_BD32_BC74F744F5C4]
+- Association [79C7C068_EC3C_4158_9B45_DEAFABC806E2]: Antrieb [37AFD518_251D_4f7b_8101_DB5D5718BFAE] -> Momentenwandler [EE71FEB8_50AD_4277_BD32_BC74F744F5C4]
+- Association [299F78D7_1985_4172_95A0_0F11F7C741A2]: Momentenwandler [EE71FEB8_50AD_4277_BD32_BC74F744F5C4] -> Fahrrad [0ABA6B51_76CD_40d4_8B25_5E902BE0706F]
+- Association [0D89AB27_A5EC_4afc_9D8D_C8FAC5778AAC]: Kette [896D9C03_5B05_4574_B093_56FABFAABE74] -> Momentenwandler [EE71FEB8_50AD_4277_BD32_BC74F744F5C4]
+====================================================================================================
+rank         : 9
+score        : 0.9459
+raw_score    : 0.8016
+type_weight  : 1.18
+lexical_bonus: 0.0000
+source       : semantic_fallback
+chunk_id     : node::EAID_37AFD518_251D_4f7b_8101_DB5D5718BFAE::0
+chunk_type   : node
+name         : Antrieb
+type         : Block
+source_id    : None
+----------------------------------------------------------------------------------------------------
+[Block] Antrieb [37AFD518_251D_4f7b_8101_DB5D5718BFAE]
+Package: Model / Pkg_Fahrradsystem / bdd_Blocks
+Appears in diagrams:
+- Fahrradsystem [AB4214F0_398F_4cc2_8591_7E26B6E83FDA]
+Connected relations:
+- Association [79C7C068_EC3C_4158_9B45_DEAFABC806E2]: Antrieb [37AFD518_251D_4f7b_8101_DB5D5718BFAE] -> Momentenwandler [EE71FEB8_50AD_4277_BD32_BC74F744F5C4]
+- Association [30BB2726_E727_42c1_B6E6_054C5B468D9C]: elektrischer Antrieb [765A432C_BB6B_4619_8B84_599B96635F62] -> Antrieb [37AFD518_251D_4f7b_8101_DB5D5718BFAE]
+- Association [7DBEC385_F590_4ecf_98C0_9871127FA847]: Kettenblatt [C589B7E5_5E7E_4f8e_9E76_E5957021987A] -> Antrieb [37AFD518_251D_4f7b_8101_DB5D5718BFAE]
+- Association [DDE2C82B_E0B0_48f9_9465_ECEBA664E0E5]: mechanischer Antrieb [36CC82F8_4F9E_4eab_9C14_687A97F1F2FE] -> Antrieb [37AFD518_251D_4f7b_8101_DB5D5718BFAE]
+====================================================================================================
+rank         : 10
+score        : 0.9444
+raw_score    : 0.8004
+type_weight  : 1.18
+lexical_bonus: 0.0000
+source       : semantic_fallback
+chunk_id     : node::EAID_3A26B4DA_E67D_44a4_A590_7A68ECF6312C::0
+chunk_type   : node
+name         : Mechanik Struktur
+type         : Block
+source_id    : None
+----------------------------------------------------------------------------------------------------
+[Block] Mechanik Struktur [3A26B4DA_E67D_44a4_A590_7A68ECF6312C]
+Package: Model / Pkg_Fahrradsystem / bdd_Blocks
+Appears in diagrams:
+- Fahrradsystem [AB4214F0_398F_4cc2_8591_7E26B6E83FDA]
+Connected relations:
+- Association [55E9197C_FB0D_4cd4_ACF0_2D64F39140E4]: Mechanik Struktur [3A26B4DA_E67D_44a4_A590_7A68ECF6312C] -> Fahrrad [0ABA6B51_76CD_40d4_8B25_5E902BE0706F]
+- Association [48266C58_5561_4500_AEE6_4CFE63C62DCF]: Lenker [CA8E8BD2_780B_4948_9756_DD10D7F9C671] -> Mechanik Struktur [3A26B4DA_E67D_44a4_A590_7A68ECF6312C]
+- Association [3ECFBB00_3327_43a0_9A11_D326F900957D]: Rahmen [A12C30F7_5BCB_4ed5_B093_F8E8C46A36D5] -> Mechanik Struktur [3A26B4DA_E67D_44a4_A590_7A68ECF6312C]
+- Association [7F1D8569_7C01_4c29_A960_4D9B9D6BFBF8]: Sattel [D6A034C3_2D07_4d79_A807_16097FEB9786] -> Mechanik Struktur [3A26B4DA_E67D_44a4_A590_7A68ECF6312C]
+
+========================================================================================================================
+QUERY #9
+========================================================================================================================
+Wie hoch ist die Gesamtmasse_Fahrrad
+STATUS: NO_EXPECTATION
+
+Detected intent    : ask_property_value
+Target entity      : Gesamtmasse_Fahrrad
+Asked slot         : masse
+Expected answer    : property_value
+Reasoning mode     : direct_field_lookup
+Query tokens       : ['gesamtmasse', 'fahrrad']
+Rewritten queries  : ['Gesamtmasse_Fahrrad', 'Gesamtmasse_Fahrrad masse', 'Gesamtmasse_Fahrrad properties']
+Retrieval plan:
+  1. lookup_entity_node - 先定位目标元素节点
+  2. extract_properties - 从节点中抽取 Properties / Attributes
+  3. semantic_fallback - 若失败则语义兜底
+
+====================================================================================================
+Final Answer:
+Gesamtmasse_Fahrrad 的 masse：Masse: 28
+====================================================================================================
+====================================================================================================
+rank         : 1
+score        : 1.1800
+raw_score    : 0.9000
+type_weight  : 1.00
+lexical_bonus: 0.2800
+source       : lookup_entity_node
+chunk_id     : node::EAID_842523F4_3152_48cd_9301_2DF1900D883B::0
+chunk_type   : node
+name         : Gesamtmasse_Fahrrad
+type         : Requirement
+source_id    : F_001
+----------------------------------------------------------------------------------------------------
+[Requirement] Gesamtmasse_Fahrrad [842523F4_3152_48cd_9301_2DF1900D883B]
+ID: F_001
+Text: Das Fahrrad darf in Summe nicht mehr als 28kg wiegen.
+Package: Model / Pkg_Anforderungen
+Appears in diagrams:
+- Pkg_Anforderungen [1CB0CCC0_65DC_460d_8F64_21BAC9A7B740]
+Attributes:
+- Einheit: kg
+- Masse: 28
+Connected relations:
+- satisfy [0E6A4B22_6B40_4247_9DA9_143B4405E66D]: Fahrrad [0ABA6B51_76CD_40d4_8B25_5E902BE0706F] -> Gesamtmasse_Fahrrad [842523F4_3152_48cd_9301_2DF1900D883B]
+====================================================================================================
+rank         : 2
+score        : 1.2377
+raw_score    : 0.8455
+type_weight  : 1.18
+lexical_bonus: 0.2400
+source       : semantic_fallback
+chunk_id     : node::EAID_0ABA6B51_76CD_40d4_8B25_5E902BE0706F::0
+chunk_type   : node
+name         : Fahrrad
+type         : Block
+source_id    : None
+----------------------------------------------------------------------------------------------------
+[Block] Fahrrad [0ABA6B51_76CD_40d4_8B25_5E902BE0706F]
+Package: Model / Pkg_Fahrradsystem / bdd_Blocks
+Appears in diagrams:
+- Pkg_Anforderungen [1CB0CCC0_65DC_460d_8F64_21BAC9A7B740]
+- Fahrradsystem [AB4214F0_398F_4cc2_8591_7E26B6E83FDA]
+Properties:
+- m_F = 28 kg
+Connected relations:
+- satisfy [0E6A4B22_6B40_4247_9DA9_143B4405E66D]: Fahrrad [0ABA6B51_76CD_40d4_8B25_5E902BE0706F] -> Gesamtmasse_Fahrrad [842523F4_3152_48cd_9301_2DF1900D883B]
+- satisfy [7A6BF065_9B18_4c72_904F_0FBF48979CB0]: Fahrrad [0ABA6B51_76CD_40d4_8B25_5E902BE0706F] -> Beschleunigungszeit [BCC28AC0_0AD8_4410_9570_D770CB6BFD5F]
+- satisfy [9B07A062_CA90_4e04_BE83_5D237A7F7ED5]: Fahrrad [0ABA6B51_76CD_40d4_8B25_5E902BE0706F] -> Beschleunigung [FB3B7B65_43DD_46c3_884A_62492FB01889]
+- Association [1FA74257_272C_48b5_B3EB_3A72989DC500]: Bremssystem [3FAC79F9_BBAD_4589_B7DA_AD9EDCCDF274] -> Fahrrad [0ABA6B51_76CD_40d4_8B25_5E902BE0706F]
+- Association [DE0659B3_322B_40c0_A72A_24510C5985B5]: Energieversorgung [6D0AA0FC_D760_4147_AB32_E15B187055E5] -> Fahrrad [0ABA6B51_76CD_40d4_8B25_5E902BE0706F]
+- Association [299F78D7_1985_4172_95A0_0F11F7C741A2]: Momentenwandler [EE71FEB8_50AD_4277_BD32_BC74F744F5C4] -> Fahrrad [0ABA6B51_76CD_40d4_8B25_5E902BE0706F]
+- Association [55E9197C_FB0D_4cd4_ACF0_2D64F39140E4]: Mechanik Struktur [3A26B4DA_E67D_44a4_A590_7A68ECF6312C] -> Fahrrad [0ABA6B51_76CD_40d4_8B25_5E902BE0706F]
+- Association [636918F9_3F43_4892_9480_5CBF9818DF51]: Steuerung [FC35C227_F39F_4cd6_B113_E3386DA17579] -> Fahrrad [0ABA6B51_76CD_40d4_8B25_5E902BE0706F]
+====================================================================================================
+rank         : 3
+score        : 1.0167
+raw_score    : 0.8447
+type_weight  : 1.18
+lexical_bonus: 0.0200
+source       : semantic_fallback
+chunk_id     : node::EAID_8109BCA9_A64D_4b79_98B9_E32DADA3240F::0
+chunk_type   : node
+name         : Fahrer/in
+type         : Actor
+source_id    : None
+----------------------------------------------------------------------------------------------------
+[Actor] Fahrer/in [8109BCA9_A64D_4b79_98B9_E32DADA3240F]
+Package: Model / Pkg_Fahrradsystem
+Appears in diagrams:
+- Fahrradsystem [AB4214F0_398F_4cc2_8591_7E26B6E83FDA]
+- Fahrer/in [DDBBFF1A_5003_4b77_BB42_BE9D623FFF6F]
+- Sequence Diagramm [EA12D2DD_B57C_4012_BD4E_01F2C0539B32]
+Properties:
+- m_M = 75 kg
+Connected relations:
+- Association [3DB003F1_50B7_422d_80C3_99AE86858AB3]: Fahrer/in [8109BCA9_A64D_4b79_98B9_E32DADA3240F] -> Elektrisches System [16B58248_8877_4d50_84C4_3F34E4293774]
+====================================================================================================
+rank         : 4
+score        : 1.0118
+raw_score    : 0.8405
+type_weight  : 1.18
+lexical_bonus: 0.0200
+source       : semantic_fallback
+chunk_id     : node::EAID_9FF37A48_8FBB_4dc2_BBF2_071D4E759FE5::0
+chunk_type   : node
+name         : Abstellen
+type         : UseCase
+source_id    : None
+----------------------------------------------------------------------------------------------------
+[UseCase] Abstellen [9FF37A48_8FBB_4dc2_BBF2_071D4E759FE5]
+Package: Model / Pkg_Fahrradsystem / Use_Case_Diagramm
+Appears in diagrams:
+- Fahrrad fahren [055BD428_E02D_4bd3_9214_CEB96D675ACF]
+Connected relations:
+- Association [E8A6F467_C677_491f_BBDD_1290E0B77E9C]: Fahrer*in [216740E0_FBA8_4773_9F0A_ADA97FDDAE47] -> Abstellen [9FF37A48_8FBB_4dc2_BBF2_071D4E759FE5]
+- include [7F1CD33E_3072_4e89_8929_CF4914F301D6]: Abstellen [9FF37A48_8FBB_4dc2_BBF2_071D4E759FE5] -> Bremsen [9320FFDD_50F3_4ec5_92C8_13994ED3FC6F]
+====================================================================================================
+rank         : 5
+score        : 1.0101
+raw_score    : 0.8391
+type_weight  : 1.18
+lexical_bonus: 0.0200
+source       : semantic_fallback
+chunk_id     : node::EAID_3A26B4DA_E67D_44a4_A590_7A68ECF6312C::0
+chunk_type   : node
+name         : Mechanik Struktur
+type         : Block
+source_id    : None
+----------------------------------------------------------------------------------------------------
+[Block] Mechanik Struktur [3A26B4DA_E67D_44a4_A590_7A68ECF6312C]
+Package: Model / Pkg_Fahrradsystem / bdd_Blocks
+Appears in diagrams:
+- Fahrradsystem [AB4214F0_398F_4cc2_8591_7E26B6E83FDA]
+Connected relations:
+- Association [55E9197C_FB0D_4cd4_ACF0_2D64F39140E4]: Mechanik Struktur [3A26B4DA_E67D_44a4_A590_7A68ECF6312C] -> Fahrrad [0ABA6B51_76CD_40d4_8B25_5E902BE0706F]
+- Association [48266C58_5561_4500_AEE6_4CFE63C62DCF]: Lenker [CA8E8BD2_780B_4948_9756_DD10D7F9C671] -> Mechanik Struktur [3A26B4DA_E67D_44a4_A590_7A68ECF6312C]
+- Association [3ECFBB00_3327_43a0_9A11_D326F900957D]: Rahmen [A12C30F7_5BCB_4ed5_B093_F8E8C46A36D5] -> Mechanik Struktur [3A26B4DA_E67D_44a4_A590_7A68ECF6312C]
+- Association [7F1D8569_7C01_4c29_A960_4D9B9D6BFBF8]: Sattel [D6A034C3_2D07_4d79_A807_16097FEB9786] -> Mechanik Struktur [3A26B4DA_E67D_44a4_A590_7A68ECF6312C]
+====================================================================================================
+rank         : 6
+score        : 1.0100
+raw_score    : 0.8390
+type_weight  : 1.18
+lexical_bonus: 0.0200
+source       : semantic_fallback
+chunk_id     : node::EAID_A1E97E6F_64B7_4436_8690_2F7FB974EC58::0
+chunk_type   : node
+name         : Fahrrad fahren
+type         : UseCase
+source_id    : None
+----------------------------------------------------------------------------------------------------
+[UseCase] Fahrrad fahren [A1E97E6F_64B7_4436_8690_2F7FB974EC58]
+Package: Model / Pkg_Fahrradsystem / Use_Case_Diagramm
+Appears in diagrams:
+- Fahrrad fahren [055BD428_E02D_4bd3_9214_CEB96D675ACF]
+Connected relations:
+- Association [742D605A_8673_4856_9319_2F081E2238CC]: Fahrer*in [216740E0_FBA8_4773_9F0A_ADA97FDDAE47] -> Fahrrad fahren [A1E97E6F_64B7_4436_8690_2F7FB974EC58]
+- include [9B6FC8E9_93D2_4e67_AF49_0ACB6846070D]: Fahrrad fahren [A1E97E6F_64B7_4436_8690_2F7FB974EC58] -> Beschleunigen [07772751_4BC8_47d8_9DA5_2881F348F981]
+- include [F069C266_D7EE_42dd_BCA9_D43E6CBDF741]: Fahrrad fahren [A1E97E6F_64B7_4436_8690_2F7FB974EC58] -> Lenken [43E1F2D3_FE4F_4843_A430_4CBF1B7C045F]
+- include [FD776ADA_3ABE_4dc7_96C1_5EF7A024841F]: Fahrrad fahren [A1E97E6F_64B7_4436_8690_2F7FB974EC58] -> Bremsen [9320FFDD_50F3_4ec5_92C8_13994ED3FC6F]
+- extend [2690D320_520E_456f_8270_47F3DE39A1D7]: E-System starten [14F2FA4F_7AB5_41ff_8C21_23F4CC79F9F7] -> Fahrrad fahren [A1E97E6F_64B7_4436_8690_2F7FB974EC58]
+====================================================================================================
+rank         : 7
+score        : 1.0056
+raw_score    : 0.8352
+type_weight  : 1.18
+lexical_bonus: 0.0200
+source       : semantic_fallback
+chunk_id     : node::EAID_9320FFDD_50F3_4ec5_92C8_13994ED3FC6F::0
+chunk_type   : node
+name         : Bremsen
+type         : UseCase
+source_id    : None
+----------------------------------------------------------------------------------------------------
+[UseCase] Bremsen [9320FFDD_50F3_4ec5_92C8_13994ED3FC6F]
+Package: Model / Pkg_Fahrradsystem / Use_Case_Diagramm
+Appears in diagrams:
+- Fahrrad fahren [055BD428_E02D_4bd3_9214_CEB96D675ACF]
+Connected relations:
+- include [FD776ADA_3ABE_4dc7_96C1_5EF7A024841F]: Fahrrad fahren [A1E97E6F_64B7_4436_8690_2F7FB974EC58] -> Bremsen [9320FFDD_50F3_4ec5_92C8_13994ED3FC6F]
+- include [7F1CD33E_3072_4e89_8929_CF4914F301D6]: Abstellen [9FF37A48_8FBB_4dc2_BBF2_071D4E759FE5] -> Bremsen [9320FFDD_50F3_4ec5_92C8_13994ED3FC6F]
+====================================================================================================
+rank         : 8
+score        : 1.0054
+raw_score    : 0.8351
+type_weight  : 1.18
+lexical_bonus: 0.0200
+source       : semantic_fallback
+chunk_id     : node::EAID_16B58248_8877_4d50_84C4_3F34E4293774::0
+chunk_type   : node
+name         : Elektrisches System
+type         : Block
+source_id    : None
+----------------------------------------------------------------------------------------------------
+[Block] Elektrisches System [16B58248_8877_4d50_84C4_3F34E4293774]
+Package: Model / Pkg_Fahrradsystem / Sequence Diagramm
+Appears in diagrams:
+- Sequence Diagramm [EA12D2DD_B57C_4012_BD4E_01F2C0539B32]
+- Fahrradsystem [455C566B_E82A_4055_97E7_B22993085F64]
+Connected relations:
+- Association [3DB003F1_50B7_422d_80C3_99AE86858AB3]: Fahrer/in [8109BCA9_A64D_4b79_98B9_E32DADA3240F] -> Elektrisches System [16B58248_8877_4d50_84C4_3F34E4293774]
+- Association [66CD3DFF_E704_43a9_8282_30EA6A486EEB]: Anzeigen [E38B2C81_5864_42de_BACB_095C4DA2952C] -> Elektrisches System [16B58248_8877_4d50_84C4_3F34E4293774]
+- Association [8A142033_3489_4f06_A7C9_71EE0FB7CC87]: Motor [8DD6AAC1_3414_4a11_B0AC_A8ED70368750] -> Elektrisches System [16B58248_8877_4d50_84C4_3F34E4293774]
+- Association [3C456194_0016_4763_A791_9DD3866CDBDD]: Batterie [9BCF3D2A_BC76_4154_A728_3E8214D5A8DF] -> Elektrisches System [16B58248_8877_4d50_84C4_3F34E4293774]
+- Association [24CFE91D_3886_46ee_AAAB_726D294015EF]: E_Antrieb Kontrollesystem [6A185400_A455_4cda_90AD_816E115E19EC] -> Elektrisches System [16B58248_8877_4d50_84C4_3F34E4293774]
+====================================================================================================
+rank         : 9
+score        : 1.0042
+raw_score    : 0.8340
+type_weight  : 1.18
+lexical_bonus: 0.0200
+source       : semantic_fallback
+chunk_id     : node::EAID_07772751_4BC8_47d8_9DA5_2881F348F981::0
+chunk_type   : node
+name         : Beschleunigen
+type         : UseCase
+source_id    : None
+----------------------------------------------------------------------------------------------------
+[UseCase] Beschleunigen [07772751_4BC8_47d8_9DA5_2881F348F981]
+Package: Model / Pkg_Fahrradsystem / Use_Case_Diagramm
+Appears in diagrams:
+- Fahrrad fahren [055BD428_E02D_4bd3_9214_CEB96D675ACF]
+Connected relations:
+- include [9B6FC8E9_93D2_4e67_AF49_0ACB6846070D]: Fahrrad fahren [A1E97E6F_64B7_4436_8690_2F7FB974EC58] -> Beschleunigen [07772751_4BC8_47d8_9DA5_2881F348F981]
+====================================================================================================
+rank         : 10
+score        : 1.0034
+raw_score    : 0.8334
+type_weight  : 1.18
+lexical_bonus: 0.0200
+source       : semantic_fallback
+chunk_id     : node::EAID_216740E0_FBA8_4773_9F0A_ADA97FDDAE47::0
+chunk_type   : node
+name         : Fahrer*in
+type         : Actor
+source_id    : None
+----------------------------------------------------------------------------------------------------
+[Actor] Fahrer*in [216740E0_FBA8_4773_9F0A_ADA97FDDAE47]
+Package: Model / Pkg_Fahrradsystem / Use_Case_Diagramm
+Appears in diagrams:
+- Fahrrad fahren [055BD428_E02D_4bd3_9214_CEB96D675ACF]
+Connected relations:
+- Association [742D605A_8673_4856_9319_2F081E2238CC]: Fahrer*in [216740E0_FBA8_4773_9F0A_ADA97FDDAE47] -> Fahrrad fahren [A1E97E6F_64B7_4436_8690_2F7FB974EC58]
+- Association [E8A6F467_C677_491f_BBDD_1290E0B77E9C]: Fahrer*in [216740E0_FBA8_4773_9F0A_ADA97FDDAE47] -> Abstellen [9FF37A48_8FBB_4dc2_BBF2_071D4E759FE5]
+
+
+========================================================================================================================
+SUMMARY
+========================================================================================================================
+TOTAL           : 9
+PASS            : 0
+FAIL            : 0
+NO_EXPECTATION  : 9
+ACCURACY        : 0.00%
